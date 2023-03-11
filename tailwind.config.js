@@ -11,6 +11,10 @@ module.exports = {
       transitionProperty: {
         height: "height",
       },
+      fontFamily: {
+        primary: ["var(--ptSerif-font)", ...defaultTheme.fontFamily.sans],
+        serif: ["var(--ptSerif-font)", ...defaultTheme.fontFamily.serif],
+      },
     },
   },
   plugins: [

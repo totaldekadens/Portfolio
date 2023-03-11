@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 const features = [
   {
@@ -91,6 +92,7 @@ const features = [
 ];
 
 export default function Home() {
+  const [hidden, setHidden] = useState<boolean>(true);
   return (
     <>
       <Head>
@@ -100,20 +102,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header></header>
-      <main className="bg-black bg-gradient-to-b from-teal-900/20 via-black to-black">
+      <main className="bg-black font-primary ">
         <div className="mx-auto max-w-7xl py-24 sm:py-32 sm:px-2 lg:px-4">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
             <div className="max-w-3xl">
-              <h2 className="font-semibold text-gray-500">
+              <h2 className="font-primary font-semibold text-slate-400/50">
                 Angelica Moberg Skoglund
               </h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <p className="font-primary mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-9xl">
                 Portfolio
               </p>
-              <p className="mt-4 text-gray-500">
-                The Drawstring Canister comes with multiple strap and handle
+              <p className="mt-4 text-slate-50">
+                {/*  The Drawstring Canister comes with multiple strap and handle
                 options to adapt throughout your day. Shoulder sling it,
-                backpack it, or handy carry it.
+                backpack it, or handy carry it. */}
               </p>
             </div>
 
@@ -121,7 +123,7 @@ export default function Home() {
               {features.map((feature) => (
                 <div
                   key={feature.name}
-                  className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
+                  className="font-primary flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                 >
                   <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
                     <h3 className="text-lg font-medium text-gray-400">
@@ -131,24 +133,43 @@ export default function Home() {
                       {feature.description}
                     </p>
 
-                    <p className="text-white text-sm font-bold mt-2">Stack</p>
+                    <p className="text-white text-sm font-bold mt-2">
+                      Stack/Tech
+                    </p>
                     <ul>
                       {feature.stack.map((st, i) => {
                         return (
-                          <li className="text-white text-sm " key={i}>
+                          <span
+                            key={i}
+                            className="mr-1 mt-2 inline-flex items-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800"
+                          >
                             {st}
-                          </li>
+                          </span>
                         );
                       })}
                       ;
                     </ul>
                   </div>
                   <div className="flex-auto lg:col-span-7 xl:col-span-8">
-                    <div className="aspect-w-5 aspect-h-3 overflow-hidden rounded-lg bg-gray-100">
+                    <div className="relative aspect-w-5 aspect-h-3 overflow-hidden rounded-lg bg-black">
+                      <div className="gap-2 z-50 opacity-0 hover:opacity-100 flex justify-center items-center hover:bg-black/20 hover:duration-200">
+                        <button
+                          type="button"
+                          className="rounded-md bg-indigo-50 py-2.5 z-50 px-3.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+                        >
+                          Go to repository
+                        </button>
+                        <button
+                          type="button"
+                          className="rounded-md bg-indigo-50 py-2.5 z-50 px-3.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+                        >
+                          Details
+                        </button>
+                      </div>
                       <img
                         src={feature.imageSrc}
                         alt={feature.imageAlt}
-                        className="object-fit object-top"
+                        className="object-fit object-top "
                       />
                     </div>
                   </div>
