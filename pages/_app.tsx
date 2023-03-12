@@ -1,6 +1,8 @@
 import { Lora, PT_Serif } from "@next/font/google";
 import { AppProps } from "next/app";
 import "@/styles/globals.css";
+import Head from "next/head";
+import Script from "next/script";
 const lora = Lora({
   subsets: ["latin"],
 });
@@ -19,6 +21,7 @@ function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
+      <Script src="../path/to/flowbite/dist/flowbite.js"></Script>
       <Component {...pageProps} />;
     </>
   );
