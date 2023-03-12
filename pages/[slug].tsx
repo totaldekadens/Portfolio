@@ -105,29 +105,6 @@ export default function Website() {
             role="list"
             className="mx-auto flex items-center space-x-2 px-4 sm:px-6 lg:px-8"
           >
-            {/* {product.breadcrumbs.map((breadcrumb) => (
-              <li key={breadcrumb.id}>
-                <div className="flex items-center">
-                  <a
-                    href={breadcrumb.href}
-                    className="mr-2 text-sm font-medium text-gray-900"
-                  >
-                    {breadcrumb.name}
-                  </a>
-                  <svg
-                    width={16}
-                    height={20}
-                    viewBox="0 0 16 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-4 text-gray-300"
-                  >
-                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                  </svg>
-                </div>
-              </li>
-            ))} */}
-
             <li className="text-sm">
               <div className="flex items-center">
                 <a
@@ -149,6 +126,13 @@ export default function Website() {
                 </svg>
               </div>
             </li>
+            <li className="text-sm">
+              <div className="flex items-center">
+                <div aria-current="page" className="font-medium text-gray-500">
+                  {info ? info.name : null}
+                </div>
+              </div>
+            </li>
           </ol>
         </nav>
 
@@ -159,11 +143,10 @@ export default function Website() {
             display: "flex",
             justifyContent: "center",
             width: "100%",
-            //alignItems: "center",
           }}
           className="mt-6 h-64 sm:h-96 lg:h-96 "
         >
-          <Carousel /* className="object-fit object-top " */>
+          <Carousel slide={false} indicators={false}>
             {info && info.imagesDesk.length > 0
               ? info.imagesDesk.map((image, i) => (
                   <img
@@ -176,44 +159,43 @@ export default function Website() {
               : null}
           </Carousel>
         </div>
-
-        <div className="bg-black">
-          <div className="py-16 h-100 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
-            <div className="relative mt-8">
-              <div className="relative -mb-6 w-full overflow-x-auto pb-6">
-                <ul
-                  role="list"
-                  className="mx-4 inline-flex h-full space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
-                >
-                  {info && info.imagesMob.length > 0
-                    ? info.imagesMob.map((image, i) => (
-                        <li
-                          key={i}
-                          className="inline-flex h-full w-64 flex-col text-center lg:w-auto"
-                        >
-                          <div className="group relative">
-                            <div
-                              style={{ height: 500, width: 231 }}
-                              className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-black"
-                            >
-                              <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="w-full h-full object-contain object-top group-hover:opacity-75"
-                              />
-                            </div>
+        {info && info.imagesMob.length > 0 ? (
+          <div className="bg-black">
+            <div className="py-16 h-100 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
+              <div className="relative mt-8">
+                <div className="relative -mb-6 w-full overflow-x-auto pb-6">
+                  <ul
+                    role="list"
+                    className="mx-4 inline-flex h-full space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
+                  >
+                    {info.imagesMob.map((image, i) => (
+                      <li
+                        key={i}
+                        className="inline-flex h-full w-64 flex-col text-center lg:w-auto"
+                      >
+                        <div className="group relative">
+                          <div
+                            style={{ height: 500, width: 231 }}
+                            className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-black"
+                          >
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full h-full object-contain object-top"
+                            />
                           </div>
-                        </li>
-                      ))
-                    : null}
-                </ul>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ) : null}
 
-        {/* Product info */}
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+        {/* Info */}
+        <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-400 sm:text-3xl">
               {info ? info.name : null}
@@ -257,8 +239,8 @@ export default function Website() {
               </div>
             </div>
 
-            <div className="mt-10 flex justify-start space-x-40">
-              <div>
+            <div className="mt-10 flex flex-wrap justify-start">
+              <div className="w-full sm:w-auto">
                 <h3 className="text-sm font-medium text-gray-300">
                   Stack / Tech
                 </h3>
@@ -274,29 +256,20 @@ export default function Website() {
                   </ul>
                 </div>
               </div>
-              <div>
-                <h3 className="text-sm font-medium text-gray-300">
-                  Collaborators
-                </h3>
+
+              <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
+                <h3 className="text-sm font-medium text-gray-300">My focus</h3>
                 <div className="mt-4">
                   <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                     {!info
                       ? null
-                      : info.collab.map((highlight) => (
+                      : info.focus.map((highlight) => (
                           <li key={highlight} className="text-gray-500">
                             <span className="text-gray-300">{highlight}</span>
                           </li>
                         ))}
                   </ul>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
-              <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{product.details}</p>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import "@/styles/globals.css";
 import Head from "next/head";
 import Script from "next/script";
+import Layout from "@/components/Layout";
 const lora = Lora({
   subsets: ["latin"],
 });
@@ -21,8 +22,9 @@ function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <Script src="../path/to/flowbite/dist/flowbite.js"></Script>
-      <Component {...pageProps} />;
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

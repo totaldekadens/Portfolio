@@ -26,6 +26,8 @@ export interface Website {
   website: string;
   type: string;
   collab: string[];
+  focus: string[];
+  date: string;
   imagesAdmin?: ImageSrc[];
 }
 
@@ -49,6 +51,12 @@ export const features: Website[] = [
     website: "",
     type: "LIA 2",
     collab: [],
+    focus: [
+      "Integration BigCommerce",
+      "Customization of Tailwind UI Components",
+      "Fully Functional E-commerce in the end",
+    ],
+    date: "On going",
   },
   {
     name: "MakeUpByS E-Commerce",
@@ -85,9 +93,19 @@ export const features: Website[] = [
     repo: "https://github.com/totaldekadens/MakeupByS",
     contribution:
       "https://github.com/totaldekadens/MakeupByS/graphs/contributors",
-    website: "",
+    website: "https://makeupbys.se/",
     type: "School",
     collab: ["Jacob Hoggen"],
+    focus: [
+      "Admin page",
+      "Quiz",
+      "Season and Category page",
+      "Product page",
+      "Checkout",
+      "Cart",
+      "Search function",
+    ],
+    date: "2023-02-01",
   },
   {
     name: "Portfolio",
@@ -114,6 +132,8 @@ export const features: Website[] = [
     website: "",
     type: "School",
     collab: ["Wictoria Drefeldt", "Hannane Kabuli", "Ali Bami", "Ting Wang"],
+    focus: ["Design", "Member page", "Member list page"],
+    date: "2022-12-22",
   },
 
   {
@@ -139,6 +159,8 @@ export const features: Website[] = [
     website: "https://business.adventurehero.se/",
     type: "LIA 1",
     collab: ["Millie Cheung", "Hugo Bengtsson"],
+    focus: ["Header", "Different components on price and home page"],
+    date: "2022-10-31",
   },
   {
     name: "FortKnox E-Commerce",
@@ -180,6 +202,13 @@ export const features: Website[] = [
     website: "",
     type: "School",
     collab: ["Hugo Bengtsson", "Fredrik Lexö"],
+    focus: [
+      "Admin page",
+      "Home page",
+      "Responsivity product page",
+      "Order confirmation",
+    ],
+    date: "2022-06-13",
   },
   {
     name: "SAD Active E-Commerce",
@@ -232,6 +261,15 @@ export const features: Website[] = [
     website: "",
     type: "School",
     collab: ["David Wong", "Sanaz Shahed"],
+    focus: [
+      "Category page",
+      "Header",
+      "Footer",
+      "Blog pages",
+      "Part of the checkout",
+      "Search function",
+    ],
+    date: "2022-05-02",
   },
   {
     name: "Zeon Milo E-Commerce",
@@ -263,7 +301,7 @@ export const features: Website[] = [
     ],
     stack: ["Vanilla JS", "MySQL", "PHP"],
     repo: "https://github.com/totaldekadens/Webshop",
-    contribution: "https://github.com/totaldekadens/Webshop",
+    contribution: "https://github.com/AminaHallam/Webshop/graphs/contributors",
     website: "",
     type: "School",
     collab: [
@@ -272,6 +310,8 @@ export const features: Website[] = [
       "Fredrik Olsson",
       "Wictoria Drefeldt",
     ],
+    focus: ["Category page", "Checkout", "Cart", "Admin"],
+    date: "2022-03-03",
   },
 ];
 
@@ -310,6 +350,9 @@ export default function Home() {
                   className="font-primary flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                 >
                   <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
+                    <div className="text-gray-700 text-xs">
+                      {"Date: " + feature.date}
+                    </div>
                     <h3 className="text-lg font-medium text-gray-400">
                       {feature.name}
                     </h3>
