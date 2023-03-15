@@ -34,7 +34,8 @@ export interface Website {
 export const features: Website[] = [
   {
     name: "Boilerplate E-Commerce",
-    description: "Ongoing project for Wallmander & Co",
+    description:
+      "Ongoing group project for Wallmander & Co. The plan is to set up a fully functional sandbox e-commerce site with different integrations. The website is live, but take in mind it's an ongoing project with a lot of flaws atm",
     slug: getSlug("Boilerplate E-Commerce"),
     imageSrc: "/wall-desk-1.png",
     imageAlt: "picture",
@@ -45,16 +46,24 @@ export const features: Website[] = [
       { src: "wall-desk-4.png", alt: "wall-desk-4.png" },
     ],
     imagesMob: [],
-    stack: ["Next.js", "Typescript", "BigCommerce", "Tailwind UI", "GraphQL"],
+    stack: [
+      "Next.js",
+      "Typescript",
+      "BigCommerce",
+      "Tailwind UI",
+      "GraphQL",
+      "Clerk",
+    ],
     repo: "https://github.com/totaldekadens/commerce-nextjs-bigcommerce",
     contribution: "",
-    website: "",
+    website: "https://commerce-nextjs-bigcommerce-totaldekadens.vercel.app/",
     type: "LIA 2",
     collab: [],
     focus: [
       "Integration BigCommerce",
       "Customization of Tailwind UI Components",
-      "Fully Functional E-commerce in the end",
+      "Filtering products",
+      "will be continued...",
     ],
     date: "On going",
   },
@@ -97,6 +106,8 @@ export const features: Website[] = [
     type: "School",
     collab: ["Jacob Hoggen"],
     focus: [
+      "Database",
+      "API",
       "Admin page",
       "Quiz",
       "Season and Category page",
@@ -262,6 +273,8 @@ export const features: Website[] = [
     type: "School",
     collab: ["David Wong", "Sanaz Shahed"],
     focus: [
+      "Database",
+      "API",
       "Category page",
       "Header",
       "Footer",
@@ -310,8 +323,25 @@ export const features: Website[] = [
       "Fredrik Olsson",
       "Wictoria Drefeldt",
     ],
-    focus: ["Category page", "Checkout", "Cart", "Admin"],
+    focus: ["Database", "API", "Category page", "Checkout", "Cart", "Admin"],
     date: "2022-03-03",
+  },
+  {
+    name: "Puzzle",
+    description: "Own little puzzle project",
+    slug: getSlug("Puzzle"),
+    imageSrc: "/puzzle.png",
+    imageAlt: "Black canvas body with chrome zipper and key ring.",
+    imagesDesk: [{ src: "puzzle.png", alt: "image of website" }],
+    imagesMob: [],
+    stack: ["Vanilla JS"],
+    repo: "https://github.com/totaldekadens/Puzzle",
+    contribution: "",
+    website: "https://totaldekadens.github.io/Puzzle/",
+    type: "Home project",
+    collab: [],
+    focus: ["Practice functions"],
+    date: "2022-01-09",
   },
 ];
 
@@ -327,14 +357,14 @@ export default function Home() {
       </Head>
       <header></header>
       <main className="bg-black font-primary ">
-        <div className="mx-auto max-w-7xl py-24 sm:py-32 sm:px-2 lg:px-4">
+        <div className="mx-auto max-w-7xl py-8 sm:py-10 sm:px-2 lg:px-4 lg:py-16 ">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
             <div className="max-w-3xl">
               <h2 className="font-primary font-semibold text-slate-400/50">
                 Angelica Moberg Skoglund
               </h2>
-              <p className="font-primary mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-9xl">
-                Portfolio
+              <p className="font-primary mt-2 text-5xl font-bold tracking-tight text-slate-50 sm:text-7xl  lg:text-9xl">
+                Projects
               </p>
               <p className="mt-4 text-slate-50">
                 {/*  The Drawstring Canister comes with multiple strap and handle
@@ -343,14 +373,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+            <div className="mt-10 space-y-18 md:space-y-18 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
               {features.map((feature) => (
                 <div
                   key={feature.name}
-                  className="font-primary flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
+                  className="font-primary mb-28 sm:mb-36 flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                 >
                   <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
-                    <div className="text-gray-700 text-xs">
+                    <div className="text-gray-600 text-xs">
                       {"Date: " + feature.date}
                     </div>
                     <h3 className="text-lg font-medium text-gray-400">
@@ -368,7 +398,7 @@ export default function Home() {
                         return (
                           <span
                             key={i}
-                            className="mr-1 mt-2 inline-flex items-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-xs font-medium text-indigo-800"
+                            className="mr-1 mt-2 inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900"
                           >
                             {st}
                           </span>
@@ -384,7 +414,7 @@ export default function Home() {
                           <Link target="_blank" href={feature.repo}>
                             <button
                               type="button"
-                              className="rounded-md bg-indigo-50 py-2.5 z-50 px-3.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+                              className="rounded-md bg-white py-2.5 z-50 px-3.5 text-xs sm:text-sm font-semibold text-teal-900 shadow-sm hover:bg-black hover:text-teal-50"
                             >
                               Go to repository
                             </button>
@@ -394,7 +424,7 @@ export default function Home() {
                           <Link target="_blank" href={feature.website}>
                             <button
                               type="button"
-                              className="rounded-md bg-indigo-50 py-2.5 z-50 px-3.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+                              className="rounded-md bg-white py-2.5 z-50 px-3.5 text-xs sm:text-sm  font-semibold text-teal-900 shadow-sm hover:bg-black hover:text-teal-50"
                             >
                               Go to website
                             </button>
@@ -403,7 +433,7 @@ export default function Home() {
                         <Link href={"/" + feature.slug}>
                           <button
                             type="button"
-                            className="rounded-md bg-indigo-50 py-2.5 z-50 px-3.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-100"
+                            className="rounded-md bg-white py-2.5 z-50 px-3.5 text-xs sm:text-sm font-semibold text-teal-900 shadow-sm hover:bg-black hover:text-teal-50"
                           >
                             Details
                           </button>

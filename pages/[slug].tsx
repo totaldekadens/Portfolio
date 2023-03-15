@@ -1,25 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/router";
@@ -78,17 +57,13 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 };
-const reviews = { href: "#", average: 4, totalCount: 117 };
-
-//carousel.pause();
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Website() {
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+  const [list, setList] = useState(true);
 
   const { query } = useRouter();
   const slug = query.slug;
@@ -96,14 +71,24 @@ export default function Website() {
   const site = features.filter((website) => website.slug == slug);
 
   const info = site[0];
-  console.log(info);
+
+  useEffect(() => {
+    if (info) {
+      if (info.imagesDesk.length < 2) {
+        if (list) {
+          setList(false);
+        }
+      }
+    }
+  }, [list]);
+
   return (
     <div className="bg-black">
-      <div className="pt-6 ">
+      <div className="pt-3 sm:pt-6" style={{ minHeight: "100vh" }}>
         <nav aria-label="Breadcrumb">
           <ol
             role="list"
-            className="mx-auto flex items-center space-x-2 px-4 sm:px-6 lg:px-8"
+            className="mx-auto mb-4 flex items-center space-x-2 px-4 sm:px-6 lg:px-8"
           >
             <li className="text-sm">
               <div className="flex items-center">
@@ -144,24 +129,43 @@ export default function Website() {
             justifyContent: "center",
             width: "100%",
           }}
-          className="mt-6 h-64 sm:h-96 lg:h-96 "
+          className={
+            info && info.imagesMob.length > 0
+              ? "mt-6 h-64 sm:h-96 lg:h-96"
+              : "mt-6 mb-10 h-64 sm:h-96 lg:h-96"
+          }
         >
-          <Carousel slide={false} indicators={false}>
-            {info && info.imagesDesk.length > 0
-              ? info.imagesDesk.map((image, i) => (
-                  <img
-                    className="object-contain object-top h-full"
-                    key={i}
-                    alt={image.alt}
-                    src={image.src}
-                  />
-                ))
-              : null}
-          </Carousel>
+          {list ? (
+            <Carousel slide={false} indicators={false}>
+              {info && info.imagesDesk.length > 0
+                ? info.imagesDesk.map((image, i) => (
+                    <img
+                      className="object-contain object-top h-full"
+                      key={i}
+                      alt={image.alt}
+                      src={image.src}
+                    />
+                  ))
+                : null}
+            </Carousel>
+          ) : (
+            <Carousel slide={false} indicators={false} rightControl leftControl>
+              {info && info.imagesDesk.length > 0
+                ? info.imagesDesk.map((image, i) => (
+                    <img
+                      className="object-contain object-top h-full"
+                      key={i}
+                      alt={image.alt}
+                      src={image.src}
+                    />
+                  ))
+                : null}
+            </Carousel>
+          )}
         </div>
         {info && info.imagesMob.length > 0 ? (
           <div className="bg-black">
-            <div className="py-16 h-100 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
+            <div className="pb-16 pt-0 h-100 sm:py-24 lg:mx-auto lg:max-w-7xl lg:px-8">
               <div className="relative mt-8">
                 <div className="relative -mb-6 w-full overflow-x-auto pb-6">
                   <ul
@@ -206,21 +210,21 @@ export default function Website() {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             {!info ? null : info.website ? (
               <a target="_blank" href={info.website}>
-                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-black hover:bg-teal-600 hover:text-teal-50 focus:outline-none ">
                   Go to Website
                 </button>
               </a>
             ) : null}
             {!info ? null : info.repo ? (
               <a target="_blank" href={info.repo}>
-                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-black hover:bg-teal-600 hover:text-teal-50 focus:outline-none ">
                   Go to Repository
                 </button>
               </a>
             ) : null}
             {!info ? null : info.contribution ? (
               <a target="_blank" href={info.contribution}>
-                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-black hover:bg-teal-600 hover:text-teal-50 focus:outline-none ">
                   Check my contribution
                 </button>
               </a>
@@ -241,7 +245,7 @@ export default function Website() {
 
             <div className="mt-10 flex flex-wrap justify-start">
               <div className="w-full sm:w-auto">
-                <h3 className="text-sm font-medium text-gray-300">
+                <h3 className="text-sm font-bold text-gray-300">
                   Stack / Tech
                 </h3>
                 <div className="mt-4">
@@ -258,7 +262,7 @@ export default function Website() {
               </div>
 
               <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
-                <h3 className="text-sm font-medium text-gray-300">My focus</h3>
+                <h3 className="text-sm font-bold text-gray-300">My focus</h3>
                 <div className="mt-4">
                   <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                     {!info

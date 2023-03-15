@@ -7,6 +7,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
     "./node_modules/flowbite-react/**/*.js",
+    "./node_modules/tw-elements/dist/js/**/*.js",
   ],
   theme: {
     extend: {
@@ -14,7 +15,7 @@ module.exports = {
         height: "height",
       },
       fontFamily: {
-        primary: ["var(--ptSerif-font)", ...defaultTheme.fontFamily.sans],
+        primary: ["var(--mont-font)", ...defaultTheme.fontFamily.sans],
         serif: ["var(--ptSerif-font)", ...defaultTheme.fontFamily.serif],
       },
     },
@@ -24,5 +25,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
     require("flowbite/plugin"),
+    require("tw-elements/dist/plugin"),
   ],
 };
