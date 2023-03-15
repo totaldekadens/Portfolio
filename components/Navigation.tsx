@@ -2,7 +2,10 @@ import { FC } from "react";
 
 const Navigation = () => {
   return (
-    <header className="h-20 text-gray-700 bg-black flex justify-between px-8 items-center sm:text-xl  md:text-2xl lg:text-4xl lg:h-24">
+    <header
+      style={{ zIndex: 100 }}
+      className="h-20 fixed left-0 right-0 text-gray-700 bg-black flex justify-between px-8 items-center sm:text-xl  md:text-2xl lg:text-4xl lg:h-24"
+    >
       <div>{/* Angelica Moberg Skoglund< */}</div>
 
       <div className="flex gap-3">

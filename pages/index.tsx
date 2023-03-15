@@ -363,7 +363,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header></header>
-      <main className="bg-black font-primary ">
+      <main style={{ paddingTop: 96 }} className="bg-black font-primary ">
         <Hero />
         {/* <Presentation /> */}
         <div className="mx-auto max-w-7xl py-8 sm:py-10 sm:px-2 lg:px-4 lg:py-16 ">

@@ -30,7 +30,7 @@ export default function Website() {
   }, [list]);
 
   return (
-    <div className="bg-black">
+    <div className="bg-black" style={{ paddingTop: 96 }}>
       <div className="pt-3 sm:pt-6" style={{ minHeight: "100vh" }}>
         <nav aria-label="Breadcrumb">
           <ol
