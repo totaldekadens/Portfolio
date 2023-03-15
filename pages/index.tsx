@@ -150,7 +150,7 @@ export const features: Website[] = [
   {
     name: "Business Adventure Hero",
     description:
-      "Group project done with focus on SEO, Accessibilty and capacity",
+      "Group project done for H5 Förnyelsebyrå AB with focus on SEO, Accessibilty and capacity",
     slug: getSlug("Business Adventure Hero"),
     imageSrc: "/adv-desk-1-dark.png",
     imageAlt: "Black canvas body with chrome zipper and key ring.",
@@ -158,7 +158,7 @@ export const features: Website[] = [
       { src: "adv-desk-1-light.png", alt: "image of website" },
       { src: "adv-desk-2-light.png", alt: "image of website" },
       { src: "adv-desk-3-light.png", alt: "image of website" },
-      { src: "adv-desk-2-dark.png", alt: "image of website" },
+      { src: "adv-desk-1-dark.png", alt: "image of website" },
     ],
     imagesMob: [
       { src: "adv-mob-1-light.png", alt: "image of website" },
@@ -170,12 +170,16 @@ export const features: Website[] = [
     website: "https://business.adventurehero.se/",
     type: "LIA 1",
     collab: ["Millie Cheung", "Hugo Bengtsson"],
-    focus: ["Header", "Different components on price and home page"],
+    focus: [
+      "Header",
+      "Dark/Light mode",
+      "Different components on price and home page",
+    ],
     date: "2022-10-31",
   },
   {
     name: "FortKnox E-Commerce",
-    description: "Group project",
+    description: "Group project focused on checkout and admin",
     slug: getSlug("FortKnox E-Commerce"),
     imageSrc: "/fort-desk-1.jpeg",
     imageAlt: "Black canvas body with chrome zipper and key ring.",
@@ -223,7 +227,7 @@ export const features: Website[] = [
   },
   {
     name: "SAD Active E-Commerce",
-    description: "Group project",
+    description: "Group project focused on creating a child theme",
     slug: getSlug("SAD Active E-Commerce"),
     imageSrc: "/sad-desk-1.jpeg",
     imagesDesk: [
@@ -286,7 +290,8 @@ export const features: Website[] = [
   },
   {
     name: "Zeon Milo E-Commerce",
-    description: "Group project",
+    description:
+      "Group project focused on creating a complete backend and frontend",
     slug: getSlug("Zeon Milo E-Commerce"),
     imageSrc: "/zeon-desk-1.jpeg",
     imageAlt: "Black canvas body with chrome zipper and key ring.",
@@ -383,7 +388,7 @@ export default function Home() {
                     <div className="text-gray-600 text-xs">
                       {"Date: " + feature.date}
                     </div>
-                    <h3 className="text-lg font-medium text-gray-400">
+                    <h3 className="text-lg font-medium text-gray-300">
                       {feature.name}
                     </h3>
                     <p className="mt-2 text-sm text-gray-600">
@@ -409,7 +414,7 @@ export default function Home() {
                   </div>
                   <div className="flex-auto lg:col-span-7 xl:col-span-8">
                     <div className="relative aspect-w-5 aspect-h-3 overflow-hidden rounded-lg bg-black">
-                      <div className="gap-2 z-50 opacity-0 hover:opacity-100 flex justify-center items-center hover:bg-black/20 hover:duration-200">
+                      <div className="gap-2 z-50 opacity-0 hover:opacity-100 flex justify-center items-center hover:bg-black/20 hover:duration-200 ">
                         {!feature.repo ? null : (
                           <Link target="_blank" href={feature.repo}>
                             <button
