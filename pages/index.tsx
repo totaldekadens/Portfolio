@@ -392,9 +392,11 @@ export default function Home() {
                     <div className="text-gray-600 text-xs">
                       {"Date: " + feature.date}
                     </div>
-                    <h3 className="text-lg font-medium text-gray-300">
-                      {feature.name}
-                    </h3>
+                    <Link href={"/" + feature.slug}>
+                      <h3 className="text-lg font-medium text-gray-300">
+                        {feature.name}
+                      </h3>
+                    </Link>
                     <p className="mt-2 text-sm text-gray-600">
                       {feature.description}
                     </p>
