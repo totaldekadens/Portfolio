@@ -5,6 +5,8 @@ import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import Link from "next/link";
 import getSlug from "@/utils/getSlug";
+import Hero from "@/components/Hero";
+import Presentation from "@/components/Presentation";
 const inter = Inter({ subsets: ["latin"] });
 
 export interface ImageSrc {
@@ -362,13 +364,15 @@ export default function Home() {
       </Head>
       <header></header>
       <main className="bg-black font-primary ">
+        <Hero />
+        {/* <Presentation /> */}
         <div className="mx-auto max-w-7xl py-8 sm:py-10 sm:px-2 lg:px-4 lg:py-16 ">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
             <div className="max-w-3xl">
               <h2 className="font-primary font-semibold text-slate-400/50">
-                Angelica Moberg Skoglund
+                {/*  Angelica Moberg Skoglund */}
               </h2>
-              <p className="font-primary mt-2 text-5xl font-bold tracking-tight text-slate-50 sm:text-7xl  lg:text-9xl">
+              <p className="font-primary mt-2 text-3xl font-semi tracking-tight text-slate-50 sm:text-4xl  lg:text-5xl">
                 Projects
               </p>
               <p className="mt-4 text-slate-50">

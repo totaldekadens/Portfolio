@@ -157,21 +157,21 @@ export default function Website() {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             {!info ? null : info.website ? (
               <a target="_blank" href={info.website}>
-                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none">
+                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-white bg-black py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none">
                   Go to Website
                 </button>
               </a>
             ) : null}
             {!info ? null : info.repo ? (
               <a target="_blank" href={info.repo}>
-                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none ">
+                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-white bg-black py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none ">
                   Go to Repository
                 </button>
               </a>
             ) : null}
             {!info ? null : info.contribution ? (
               <a target="_blank" href={info.contribution}>
-                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none ">
+                <button className="mt-10 flex w-full items-center justify-center rounded-md border border-white bg-black py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none ">
                   Check my contribution
                 </button>
               </a>
