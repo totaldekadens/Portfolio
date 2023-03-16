@@ -10,6 +10,7 @@ import Presentation from "@/components/PresentationMobile";
 import { features } from "@/utils/data";
 import PresText from "@/components/PresText";
 import { HashtagIcon } from "@heroicons/react/20/solid";
+import { Fade } from "react-awesome-reveal";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -28,32 +29,34 @@ export default function Home() {
         className="bg-black font-primary flex flex-col items-center"
       >
         {/*  <Hero /> */}
-        <div
-          style={{ minHeight: "80vh" }}
-          className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
-        >
-          <h1
-            style={{ fontSize: 44, lineHeight: 1.2 }}
-            className="flex sm:hidden"
+        <Fade delay={30} triggerOnce={true} duration={2000} direction="up">
+          <div
+            style={{ minHeight: "80vh" }}
+            className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
           >
-            Junior <br />
-            Web Developer <br /> & Coffee <br />
-            Enthusiast
-          </h1>
-          <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
-            Junior Web Developer <br /> & Coffee Enthusiast
-          </h1>
-          <Link href={"#projects"} scroll={false}>
-            <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
-              Check out my projects
-            </button>
-          </Link>
-          <Link href={"/aboutme"} scroll={false}>
-            <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
-              Who am I?
-            </button>
-          </Link>
-        </div>
+            <h1
+              style={{ fontSize: 44, lineHeight: 1.2 }}
+              className="flex sm:hidden"
+            >
+              Junior <br />
+              Web Developer <br /> & Coffee <br />
+              Enthusiast
+            </h1>
+            <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
+              Junior Web Developer <br /> & Coffee Enthusiast
+            </h1>
+            <Link href={"#projects"} scroll={false}>
+              <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+                Check out my projects
+              </button>
+            </Link>
+            <Link href={"/aboutme"} scroll={false}>
+              <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+                Who am I?
+              </button>
+            </Link>
+          </div>
+        </Fade>
         {/*   <Presentation /> */}
 
         <div
