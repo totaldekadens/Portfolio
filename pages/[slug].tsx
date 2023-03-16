@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/router";
-import { features } from ".";
 import { Carousel } from "flowbite-react";
 import Head from "next/head";
+import { features } from "@/utils/data";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -89,8 +89,8 @@ export default function Website() {
             }}
             className={
               info && info.imagesMob.length > 0
-                ? "mt-6 h-64 sm:h-96 lg:h-96"
-                : "mt-6 mb-10 h-64 sm:h-96 lg:h-96"
+                ? "mt-6 h-64 px-4 sm:h-96 lg:h-96"
+                : "mt-6 mb-10 px-4 h-64 sm:h-96 lg:h-96"
             }
           >
             {list ? (
