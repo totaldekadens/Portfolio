@@ -89,8 +89,8 @@ export default function Website() {
             }}
             className={
               info && info.imagesMob.length > 0
-                ? "mt-6 h-64 sm:h-96 lg:h-96"
-                : "mt-6 mb-10 h-64 sm:h-96 lg:h-96"
+                ? "mt-6 h-64 px-4 sm:h-96 lg:h-96"
+                : "mt-6 mb-10 px-4 h-64 sm:h-96 lg:h-96"
             }
           >
             {list ? (

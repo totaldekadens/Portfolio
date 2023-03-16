@@ -8,6 +8,8 @@ import getSlug from "@/utils/getSlug";
 import Hero from "@/components/Hero";
 import Presentation from "@/components/Presentation";
 import { features } from "@/utils/data";
+import PresText from "@/components/PresText";
+import { HashtagIcon } from "@heroicons/react/20/solid";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -25,9 +27,40 @@ export default function Home() {
         style={{ paddingTop: 96 }}
         className="bg-black font-primary flex flex-col items-center"
       >
-        <Hero />
-        <Presentation />
-        <div className="mx-auto max-w-7xl py-8 sm:py-10 px-4 sm:px-10 lg:px-4 lg:py-16 ">
+        {/*  <Hero /> */}
+        <div
+          style={{ minHeight: "90vh" }}
+          className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
+        >
+          <h1
+            style={{ fontSize: 44, lineHeight: 1.2 }}
+            className="flex sm:hidden"
+          >
+            Junior <br />
+            Web Developer <br /> & Coffee <br />
+            Enthusiast
+          </h1>
+          <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
+            Junior Web Developer <br /> & Coffee Enthusiast
+          </h1>
+          <Link href={"#projects"} scroll={false}>
+            <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+              Check out my projects
+            </button>
+          </Link>
+          <Link href={"/aboutme"} scroll={false}>
+            <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+              Who am I?
+            </button>
+          </Link>
+        </div>
+        {/*   <Presentation /> */}
+
+        <div
+          id="projects"
+          style={{ paddingTop: 96 }}
+          className="mx-auto max-w-7xl py-8 sm:py-10 px-4 sm:px-10 lg:px-4 lg:py-16 "
+        >
           <div className="mx-auto px-4 lg:max-w-none">
             <div className="max-w-3xl">
               <p className="font-primary mt-2 text-3xl font-semi tracking-tight text-slate-50 sm:text-4xl  lg:text-5xl">

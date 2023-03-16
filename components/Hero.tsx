@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <div
-      style={{ minHeight: "90vh" }}
+      style={{ minHeight: "80vh" }}
       className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
     >
       <h1 style={{ fontSize: 44, lineHeight: 1.2 }} className="flex sm:hidden">
