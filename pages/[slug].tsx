@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StarIcon } from "@heroicons/react/20/solid";
+import { HashtagIcon, StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { useRouter } from "next/router";
 import { Carousel } from "flowbite-react";
@@ -208,7 +208,7 @@ export default function Website() {
 
               <div className="mt-10 flex flex-wrap justify-start">
                 <div className="w-full sm:w-auto">
-                  <h3 className="text-sm font-bold text-gray-300">
+                  <h3 className="text-md font-bold text-gray-300">
                     Stack / Tech
                   </h3>
                   <div className="mt-4">
@@ -219,7 +219,11 @@ export default function Website() {
                       {!info
                         ? null
                         : info.stack.map((highlight) => (
-                            <li key={highlight} className="text-gray-500">
+                            <li
+                              key={highlight}
+                              className="text-gray-300 flex gap-1"
+                            >
+                              <HashtagIcon width={12} />
                               <span className="text-gray-300">{highlight}</span>
                             </li>
                           ))}
@@ -228,7 +232,7 @@ export default function Website() {
                 </div>
 
                 <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
-                  <h3 className="text-sm font-bold text-gray-300">My focus</h3>
+                  <h3 className="text-md font-bold text-gray-300">My focus</h3>
                   <div className="mt-4">
                     <ul
                       role="list"
@@ -237,7 +241,11 @@ export default function Website() {
                       {!info
                         ? null
                         : info.focus.map((highlight) => (
-                            <li key={highlight} className="text-gray-500">
+                            <li
+                              key={highlight}
+                              className="text-gray-300 flex gap-1"
+                            >
+                              <HashtagIcon width={12} />
                               <span className="text-gray-300">{highlight}</span>
                             </li>
                           ))}

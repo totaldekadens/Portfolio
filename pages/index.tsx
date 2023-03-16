@@ -6,7 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import getSlug from "@/utils/getSlug";
 import Hero from "@/components/Hero";
-import Presentation from "@/components/Presentation";
+import Presentation from "@/components/PresentationMobile";
 import { features } from "@/utils/data";
 import PresText from "@/components/PresText";
 import { HashtagIcon } from "@heroicons/react/20/solid";
@@ -29,7 +29,7 @@ export default function Home() {
       >
         {/*  <Hero /> */}
         <div
-          style={{ minHeight: "90vh" }}
+          style={{ minHeight: "80vh" }}
           className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
         >
           <h1

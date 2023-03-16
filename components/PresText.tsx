@@ -7,8 +7,8 @@ const PresText = ({
 }) => {
   return (
     <>
-      <p style={{ fontSize: 14, color: "white" }}>{question}</p>
-      <p style={{ fontSize: 12, color: "white", marginBottom: 12 }}>
+      <p style={{ fontSize: 16, color: "white" }}>{question}</p>
+      <p style={{ fontSize: 14, color: "white", marginBottom: 12 }}>
         {" "}
         {answer}
       </p>
