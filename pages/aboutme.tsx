@@ -94,7 +94,7 @@ const AboutMe = () => {
                 <li className="text-sm mb-1">
                   <div className="flex gap-1 items-center">
                     <HashtagIcon width={12} />
-                    <p style={{ paddingTop: 2 }}>Mantine.dev.js</p>
+                    <p style={{ paddingTop: 2 }}>Mantine.dev</p>
                   </div>
                 </li>
                 <li className="text-sm mb-1">
