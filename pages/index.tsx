@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import getSlug from "@/utils/getSlug";
 import Hero from "@/components/Hero";
@@ -11,10 +11,26 @@ import { features } from "@/utils/data";
 import PresText from "@/components/PresText";
 import { HashtagIcon } from "@heroicons/react/20/solid";
 import { Fade } from "react-awesome-reveal";
+import { getCookie, setCookie } from "cookies-next";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [hidden, setHidden] = useState<boolean>(true);
+  const [fade, setFade] = useState<boolean>(true);
+
+  useEffect(() => {
+    const getCookies = () => {
+      const firstTime = getCookie("firstTime");
+      if (!firstTime) {
+        setFade(true);
+        setTimeout(() => {
+          setCookie("firstTime", true, { maxAge: 60 * 2 });
+        }, 4000);
+      } else {
+        setFade(false);
+      }
+    };
+    getCookies();
+  }, []);
   return (
     <>
       <Head>
@@ -29,7 +45,36 @@ export default function Home() {
         className="bg-black font-primary flex flex-col items-center"
       >
         {/*  <Hero /> */}
-        <Fade delay={30} triggerOnce={true} duration={2000} direction="up">
+        {fade ? (
+          <Fade delay={30} triggerOnce={true} duration={2000} direction="up">
+            <div
+              style={{ minHeight: "80vh" }}
+              className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
+            >
+              <h1
+                style={{ fontSize: 44, lineHeight: 1.2 }}
+                className="flex sm:hidden"
+              >
+                Junior <br />
+                Web Developer <br /> & Coffee <br />
+                Enthusiast
+              </h1>
+              <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
+                Junior Web Developer <br /> & Coffee Enthusiast
+              </h1>
+              <Link href={"#projects"} scroll={false}>
+                <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+                  Check out my projects
+                </button>
+              </Link>
+              <Link href={"/aboutme"} scroll={false}>
+                <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+                  Who am I?
+                </button>
+              </Link>
+            </div>
+          </Fade>
+        ) : (
           <div
             style={{ minHeight: "80vh" }}
             className="px-5 text-white flex justify-center items-start sm:items-center flex-col"
@@ -56,7 +101,8 @@ export default function Home() {
               </button>
             </Link>
           </div>
-        </Fade>
+        )}
+
         {/*   <Presentation /> */}
 
         <div
@@ -74,6 +120,7 @@ export default function Home() {
             <div className="mt-10 space-y-18 md:space-y-18 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
               {features.map((feature) => (
                 <div
+                  id={feature.slug}
                   key={feature.name}
                   className="font-primary mb-28 sm:mb-36 flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                 >

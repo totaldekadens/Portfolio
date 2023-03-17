@@ -29,7 +29,7 @@ export default function Website() {
       }
     }
   }, [list]);
-
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -47,13 +47,13 @@ export default function Website() {
             >
               <li className="text-sm">
                 <div className="flex items-center">
-                  <a
-                    href={"/"}
+                  <div
+                    onClick={() => router.push(info ? "/#" + info.slug : "/")}
                     aria-current="page"
-                    className="font-medium text-gray-500 hover:text-gray-600"
+                    className="font-medium text-gray-500 hover:text-gray-600 cursor-pointer"
                   >
                     Portfolio
-                  </a>
+                  </div>
                   <svg
                     width={16}
                     height={20}

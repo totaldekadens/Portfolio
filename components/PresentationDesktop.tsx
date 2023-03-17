@@ -52,9 +52,9 @@ const PresentationDesktop = () => {
             <div className="flex mb-24 lg:mb-0 basis-full lg:basis-1/3 px-10 justify-center items-start h-full w-full">
               <div className="flex w-full h-full flex-col justify-center">
                 <img
-                  src="profil.png"
+                  src="profil.webp"
                   alt="en bild på mig själv"
-                  className="rounded-md h-60 w-60 mb-10"
+                  className="rounded-md h-60 w-60 mb-10 object-cover"
                   style={{ borderRadius: "50%" }}
                 />
                 <PresText

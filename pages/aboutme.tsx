@@ -3,8 +3,10 @@ import PresentationDesktop from "@/components/PresentationDesktop";
 import PresentationMobile from "@/components/PresentationMobile";
 import { HashtagIcon } from "@heroicons/react/20/solid";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const AboutMe = () => {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -26,13 +28,13 @@ const AboutMe = () => {
           >
             <li className="text-sm">
               <div className="flex items-center">
-                <a
-                  href={"/"}
+                <div
+                  onClick={() => router.push("/")}
                   aria-current="page"
-                  className="font-medium text-gray-500 hover:text-gray-600"
+                  className="font-medium text-gray-500 hover:text-gray-600 cursor-pointer"
                 >
                   Portfolio
-                </a>
+                </div>
                 <svg
                   width={16}
                   height={20}
