@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import getSlug from "@/utils/getSlug";
 import Hero from "@/components/Hero";
@@ -12,10 +12,13 @@ import PresText from "@/components/PresText";
 import { HashtagIcon } from "@heroicons/react/20/solid";
 import { Fade } from "react-awesome-reveal";
 import { getCookie, setCookie } from "cookies-next";
+import useIntersection from "@/utils/useIntersections";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [fade, setFade] = useState<boolean>(true);
+
+  const myRef = useRef<any>(null);
 
   useEffect(() => {
     const getCookies = () => {
@@ -62,11 +65,12 @@ export default function Home() {
               <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
                 Junior Web Developer <br /> & Coffee Enthusiast
               </h1>
-              <Link href={"#projects"} scroll={false}>
-                <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
-                  Check out my projects
-                </button>
-              </Link>
+              <button
+                onClick={() => myRef.current.scrollIntoView()}
+                className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50"
+              >
+                Check out my projects
+              </button>
               <Link href={"/aboutme"} scroll={false}>
                 <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
                   Who am I?
@@ -90,11 +94,14 @@ export default function Home() {
             <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
               Junior Web Developer <br /> & Coffee Enthusiast
             </h1>
-            <Link href={"#projects"} scroll={false}>
-              <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
-                Check out my projects
-              </button>
-            </Link>
+
+            <button
+              onClick={() => myRef.current.scrollIntoView()}
+              className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50"
+            >
+              Check out my projects
+            </button>
+
             <Link href={"/aboutme"} scroll={false}>
               <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
                 Who am I?
@@ -106,6 +113,7 @@ export default function Home() {
         {/*   <Presentation /> */}
 
         <div
+          ref={myRef}
           id="projects"
           style={{ paddingTop: 96 }}
           className="mx-auto max-w-7xl py-8 sm:py-10 px-4 sm:px-10 lg:px-4 lg:py-16 "
@@ -120,6 +128,7 @@ export default function Home() {
             <div className="mt-10 space-y-18 md:space-y-18 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
               {features.map((feature) => (
                 <div
+                  //ref={ref}
                   id={feature.slug}
                   key={feature.name}
                   className="font-primary mb-28 sm:mb-36 flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"

@@ -48,7 +48,7 @@ export default function Website() {
               <li className="text-sm">
                 <div className="flex items-center">
                   <div
-                    onClick={() => router.push(info ? "/#" + info.slug : "/")}
+                    onClick={() => router.back()}
                     aria-current="page"
                     className="font-medium text-gray-500 hover:text-gray-600 cursor-pointer"
                   >
