@@ -42,11 +42,11 @@ const PresentationDesktop = () => {
               <PresText question="Graduation?" answer="17th of May 2023" />
               <PresText
                 question="My nisch?"
-                answer="This one is so hard, because I’m right between frontend and backend at the moment. I know I like to work with functionality and problem solving, so I’ve been drawn to eg admin pages within projects in school and being the one ending up with creating the API’s. I think it has something to do with my need for the feeling of control, if we are going to be honest."
+                answer="This one is so hard, because I’m right between frontend and backend at the moment. I know I like to work with functionality and problem solving, so I’ve been drawn to eg admin pages within projects in school and been the one ending up with creating the API’s. I think it has something to do with my need of feeling in control, if we are going to be honest."
               />
               <PresText
                 question="How I work?"
-                answer="If I have something completely new in front of me, I need some ramp up time. My pattern is in general when I go back to my previous jobs that when I get into something, I end up really being good at it. That’s because I always want more. I don’t like to just know a little, I want to understand the whole process."
+                answer="When I go back and look at how it was at my previous workplaces, I notice a pattern. I get a task or responsibility and I end up being really good at it. I always want to get a good understanding of why I do things and not just how to do it. It is very important to me. I think I am perceived as very driven and ambitious, but that I can also be quite chill and lovely to deal with."
               />
             </div>
             <div className="flex mb-24 lg:mb-0 basis-full lg:basis-1/3 px-10 justify-center items-start h-full w-full">
