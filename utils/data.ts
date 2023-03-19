@@ -28,7 +28,7 @@ export const features: Website[] = [
   {
     name: "Boilerplate E-Commerce",
     description:
-      "Ongoing group project for Wallmander & Co. The plan is to set up a fully functional sandbox e-commerce site with different integrations. The website is live, but take in mind it's an ongoing project with a lot of flaws atm",
+      "Ongoing group project for Wallmander & Co. The plan is to set up a fully functional sandbox e-commerce site with different integrations.",
     slug: getSlug("Boilerplate E-Commerce"),
     imageSrc: "/wall-desk-1.webp",
     imageAlt: "picture",
@@ -47,9 +47,9 @@ export const features: Website[] = [
       "GraphQL",
       "Clerk",
     ],
-    repo: "https://github.com/totaldekadens/commerce-nextjs-bigcommerce",
+    repo: "",
     contribution: "",
-    website: "https://commerce-nextjs-bigcommerce-totaldekadens.vercel.app/",
+    website: "",
     type: "LIA project",
     collab: [],
     focus: [
