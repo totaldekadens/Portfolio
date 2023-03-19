@@ -17,7 +17,7 @@ export interface Website {
   repo: string;
   contribution: string;
   website: string;
-  type: string;
+  type: "School project" | "LIA project" | "Hobby" | "Master thesis";
   collab: string[];
   focus: string[];
   date: string;
@@ -50,7 +50,7 @@ export const features: Website[] = [
     repo: "https://github.com/totaldekadens/commerce-nextjs-bigcommerce",
     contribution: "",
     website: "https://commerce-nextjs-bigcommerce-totaldekadens.vercel.app/",
-    type: "LIA 2",
+    type: "LIA project",
     collab: [],
     focus: [
       "Integration BigCommerce",
@@ -96,7 +96,7 @@ export const features: Website[] = [
     contribution:
       "https://github.com/totaldekadens/MakeupByS/graphs/contributors",
     website: "https://makeupbys.se/",
-    type: "School",
+    type: "Master thesis",
     collab: ["Jacob Hoggen"],
     focus: [
       "Database",
@@ -134,7 +134,7 @@ export const features: Website[] = [
     contribution:
       "https://github.com/wictoriadrefelt/portfolio-assignment/graphs/contributors",
     website: "",
-    type: "School",
+    type: "School project",
     collab: ["Wictoria Drefeldt", "Hannane Kabuli", "Ali Bami", "Ting Wang"],
     focus: ["Design", "Member page", "Member list page"],
     date: "2022-12-22",
@@ -161,7 +161,7 @@ export const features: Website[] = [
     repo: "",
     contribution: "",
     website: "https://business.adventurehero.se/",
-    type: "LIA 1",
+    type: "LIA project",
     collab: ["Millie Cheung", "Hugo Bengtsson"],
     focus: [
       "Header",
@@ -208,7 +208,7 @@ export const features: Website[] = [
     contribution:
       "https://github.com/totaldekadens/Fortknox/graphs/contributors",
     website: "",
-    type: "School",
+    type: "School project",
     collab: ["Hugo Bengtsson", "Fredrik Lexö"],
     focus: [
       "Admin page",
@@ -267,7 +267,7 @@ export const features: Website[] = [
     contribution:
       "https://github.com/totaldekadens/Wordpress---Webshop/graphs/contributors",
     website: "",
-    type: "School",
+    type: "School project",
     collab: ["David Wong", "Sanaz Shahed"],
     focus: [
       "Database",
@@ -314,7 +314,7 @@ export const features: Website[] = [
     repo: "https://github.com/totaldekadens/Webshop",
     contribution: "https://github.com/AminaHallam/Webshop/graphs/contributors",
     website: "",
-    type: "School",
+    type: "School project",
     collab: [
       "Lisa Karnerfors",
       "Amina Hallam",
@@ -336,7 +336,7 @@ export const features: Website[] = [
     repo: "https://github.com/totaldekadens/Puzzle",
     contribution: "",
     website: "https://totaldekadens.github.io/Puzzle/",
-    type: "Home project",
+    type: "Hobby",
     collab: [],
     focus: ["Practice functions"],
     date: "2022-01-09",

@@ -125,26 +125,41 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-10 space-y-18 md:space-y-18 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
+            <div className="mt-10 space-y-18 md:space-y-18 border-t border-gray-200 pt-12 sm:mt-16 sm:pt-16">
               {features.map((feature) => (
                 <div
-                  //ref={ref}
                   id={feature.slug}
                   key={feature.name}
                   className="font-primary mb-28 sm:mb-36 flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                 >
                   <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
-                    <div className="text-gray-600 text-xs">
-                      {"Date: " + feature.date}
-                    </div>
                     <Link href={"/" + feature.slug}>
-                      <h3 className="text-lg font-medium text-gray-300">
+                      <h3 className="text-xl font-medium text-gray-300 hidden lg:flex">
                         {feature.name}
                       </h3>
                     </Link>
-                    <p className="mt-2 text-sm text-gray-600">
-                      {feature.description}
-                    </p>
+                    <p className="text-white text-sm font mt-2">Type</p>
+                    <ul>
+                      <span
+                        style={{
+                          color: "white",
+                          backgroundColor:
+                            feature.type == "Hobby"
+                              ? "#B8918A"
+                              : feature.type == "LIA project"
+                              ? "#65877F"
+                              : feature.type == "Master thesis"
+                              ? "#A37067"
+                              : feature.type == "School project"
+                              ? "#59757D"
+                              : "black",
+                        }}
+                        className="mr-1 mt-2 inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900"
+                      >
+                        {feature.type}
+                      </span>
+                      ;
+                    </ul>
 
                     <p className="text-white text-sm font mt-2">Stack/Tech</p>
                     <ul>
@@ -161,6 +176,7 @@ export default function Home() {
                       ;
                     </ul>
                   </div>
+
                   <div className="flex-auto lg:col-span-7 xl:col-span-8">
                     <div className="relative aspect-w-5 aspect-h-3 overflow-hidden rounded-lg bg-black">
                       <div className="gap-2 z-50 opacity-0 hover:opacity-100 flex justify-center items-center hover:bg-black/20 hover:duration-200 ">
@@ -193,13 +209,20 @@ export default function Home() {
                           </button>
                         </Link>
                       </div>
-                      <img
+                      <Image
+                        width={500}
+                        height={500}
                         src={feature.imageSrc}
                         alt={feature.imageAlt}
                         className="object-fit object-top "
                       />
                     </div>
                   </div>
+                  <Link href={"/" + feature.slug}>
+                    <h3 className="text-xl mb-5 font-medium text-gray-300 flex lg:hidden">
+                      {feature.name}
+                    </h3>
+                  </Link>
                 </div>
               ))}
             </div>
