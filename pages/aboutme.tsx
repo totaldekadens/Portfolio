@@ -107,6 +107,12 @@ const AboutMe = () => {
                       <p style={{ paddingTop: 2 }}>MongoDB</p>
                     </div>
                   </li>
+                  <li className="text-sm mb-1">
+                    <div className="flex gap-1 items-center">
+                      <HashtagIcon width={12} />
+                      <p style={{ paddingTop: 2 }}>Stripe.js</p>
+                    </div>
+                  </li>
                 </ul>
               </div>
               <div className="flex flex-col basis-1/3 px-1 mb-6 md:mb-0">
