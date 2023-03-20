@@ -91,7 +91,7 @@ export const features: Website[] = [
       { src: "admin-10.webp", alt: "admin-10.webp" },
       { src: "admin-11.webp", alt: "admin-11.webp" },
     ],
-    stack: ["Next.js", "Typescript", "Mantine UI", "MongoDB"],
+    stack: ["Next.js", "Typescript", "Mantine UI", "MongoDB", "Stripe.js"],
     repo: "https://github.com/totaldekadens/MakeupByS",
     contribution:
       "https://github.com/totaldekadens/MakeupByS/graphs/contributors",
@@ -106,6 +106,7 @@ export const features: Website[] = [
       "Season and Category page",
       "Product page",
       "Checkout",
+      "Payment",
       "Cart",
       "Search function",
     ],
