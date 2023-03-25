@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useState } from "react";
+import MobileMenu from "./MobileMenu";
 
 const Navigation = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  console.log(open);
   return (
     <header
       style={{ zIndex: 100 }}
@@ -12,7 +15,7 @@ const Navigation = () => {
           <img src="/personalLogo.png"></img>
         </Link>
       </div>
-      <div className="flex gap-3">
+      <div className=" gap-3 hidden sm:flex">
         <a href="mailto:angelica.moberg@hotmail.com">
           <img src="/letter.png" />
         </a>
@@ -26,6 +29,7 @@ const Navigation = () => {
           <img src="/githublogo.webp" />
         </a>
       </div>
+      <MobileMenu open={open} setOpen={setOpen} />
     </header>
   );
 };
