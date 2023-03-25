@@ -23,9 +23,15 @@ interface Props {
 
 export default function MobileMenu({ open, setOpen }: Props) {
   return (
-    <div style={{ cursor: "pointer" }} onClick={() => setOpen(!open)}>
-      {open ? <Burger /> : <Burger2 />}
-    </div>
+    <>
+      <div
+        className="flex sm:hidden"
+        style={{ cursor: "pointer" }}
+        onClick={() => setOpen(!open)}
+      >
+        {open ? <Burger2 /> : <Burger />}
+      </div>
+    </>
   );
 }
 

@@ -18,7 +18,7 @@ const AboutMe = () => {
       </Head>
 
       <main
-        style={{ paddingTop: 96, minHeight: "100vh" }}
+        style={{ /* paddingTop: 96,  */ paddingTop: 16, minHeight: "100vh" }}
         className="bg-black font-primary flex flex-col items-center pb-6"
       >
         {" "}

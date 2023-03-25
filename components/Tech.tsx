@@ -66,7 +66,6 @@ function classNames(...classes: any) {
 export default function Tech() {
   return (
     <div
-      id="projects"
       style={{ paddingTop: 96 }}
       className="w-full  max-w-7xl py-8 sm:py-10 px-4 sm:px-10 lg:px-4 lg:py-16 "
     >

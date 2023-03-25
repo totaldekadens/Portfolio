@@ -38,7 +38,10 @@ export default function Website() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-black" style={{ paddingTop: 96 }}>
+      <div
+        className="bg-black"
+        style={{ /* paddingTop: 96  */ paddingTop: 16 }}
+      >
         <div className="pt-3 sm:pt-6" style={{ minHeight: "100vh" }}>
           <nav aria-label="Breadcrumb">
             <ol

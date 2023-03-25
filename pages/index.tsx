@@ -7,6 +7,7 @@ import { features } from "@/utils/data";
 import { Fade } from "react-awesome-reveal";
 import { getCookie, setCookie } from "cookies-next";
 import Tech from "@/components/Tech";
+import MobileDrawer from "@/components/MobileDrawer";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -39,7 +40,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        style={{ paddingTop: 96 }}
+        style={{
+          paddingTop: 16,
+          /* paddingTop: 96  */
+        }}
         className="bg-black font-primary flex flex-col items-center"
       >
         {/*  <Hero /> */}
