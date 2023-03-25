@@ -8,7 +8,7 @@ const PresentationDesktop = () => {
       <div
         id="presentation"
         style={{ minHeight: "70vh", paddingTop: 96 }}
-        className="px-5 text-white max-w-7xl  justify-center items-start flex-col lg:flex-row hidden lg:flex"
+        className="px-5 text-white max-w-7xl  justify-center items-start flex-col lg:flex-row hidden lg:flex "
       >
         <div className="flex px-1 sm:px-10 flex-col">
           <div className="px-3 mb-2">

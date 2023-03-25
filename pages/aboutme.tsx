@@ -18,8 +18,8 @@ const AboutMe = () => {
       </Head>
 
       <main
-        style={{ paddingTop: 96 }}
-        className="bg-black font-primary flex flex-col items-center"
+        style={{ /* paddingTop: 96,  */ paddingTop: 16, minHeight: "100vh" }}
+        className="bg-black font-primary flex flex-col items-center pb-6"
       >
         {" "}
         <nav aria-label="Breadcrumb" className="w-full">
@@ -59,7 +59,7 @@ const AboutMe = () => {
         </nav>
         <PresentationMobile />
         <PresentationDesktop />
-        <Fade triggerOnce={true} duration={2000} delay={500}>
+        {/* <Fade triggerOnce={true} duration={2000} delay={500}>
           <div className="mx-auto w-full max-w-7xl px-10 py-8 sm:py-10 sm:px-16 md:px-16 lg:px-8 lg:py-16 ">
             <p className="font-primary mt-2 text-3xl font-semi tracking-tight text-slate-50 sm:text-4xl  lg:text-5xl">
               Tech / Stack
@@ -182,7 +182,7 @@ const AboutMe = () => {
               </div>
             </div>
           </div>
-        </Fade>
+        </Fade> */}
       </main>
     </>
   );

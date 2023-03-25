@@ -38,7 +38,10 @@ export default function Website() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-black" style={{ paddingTop: 96 }}>
+      <div
+        className="bg-black"
+        style={{ /* paddingTop: 96  */ paddingTop: 16 }}
+      >
         <div className="pt-3 sm:pt-6" style={{ minHeight: "100vh" }}>
           <nav aria-label="Breadcrumb">
             <ol
@@ -173,21 +176,21 @@ export default function Website() {
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               {!info ? null : info.website ? (
                 <a target="_blank" href={info.website}>
-                  <button className="mt-10 flex w-full items-center justify-center rounded-md border border-white bg-black py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none">
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50">
                     Go to Website
                   </button>
                 </a>
               ) : null}
               {!info ? null : info.repo ? (
                 <a target="_blank" href={info.repo}>
-                  <button className="mt-10 flex w-full items-center justify-center rounded-md border border-white bg-black py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none ">
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50">
                     Go to Repository
                   </button>
                 </a>
               ) : null}
               {!info ? null : info.contribution ? (
                 <a target="_blank" href={info.contribution}>
-                  <button className="mt-10 flex w-full items-center justify-center rounded-md border border-white bg-black py-3 px-8 text-base font-medium text-white hover:bg-teal-800 hover:text-teal-50 focus:outline-none ">
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50">
                     Check my contribution
                   </button>
                 </a>

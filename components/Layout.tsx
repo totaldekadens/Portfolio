@@ -1,4 +1,10 @@
-import { FC, PropsWithChildren } from "react";
+import {
+  Dispatch,
+  FC,
+  PropsWithChildren,
+  SetStateAction,
+  useState,
+} from "react";
 import Navigation from "./Navigation";
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {

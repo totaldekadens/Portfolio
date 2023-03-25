@@ -1,18 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import getSlug from "@/utils/getSlug";
-import Hero from "@/components/Hero";
-import Presentation from "@/components/PresentationMobile";
 import { features } from "@/utils/data";
-import PresText from "@/components/PresText";
-import { HashtagIcon } from "@heroicons/react/20/solid";
 import { Fade } from "react-awesome-reveal";
 import { getCookie, setCookie } from "cookies-next";
-import useIntersection from "@/utils/useIntersections";
+import Tech from "@/components/Tech";
+import MobileDrawer from "@/components/MobileDrawer";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -34,6 +29,8 @@ export default function Home() {
     };
     getCookies();
   }, []);
+
+  const hej = features.length - 1;
   return (
     <>
       <Head>
@@ -42,9 +39,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header></header>
       <main
-        style={{ paddingTop: 96 }}
+        style={{
+          paddingTop: 16,
+          /* paddingTop: 96  */
+        }}
         className="bg-black font-primary flex flex-col items-center"
       >
         {/*  <Hero /> */}
@@ -58,21 +57,20 @@ export default function Home() {
                 style={{ fontSize: 44, lineHeight: 1.2 }}
                 className="flex sm:hidden"
               >
-                Junior <br />
                 Web Developer <br /> & Coffee <br />
                 Enthusiast
               </h1>
               <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
-                Junior Web Developer <br /> & Coffee Enthusiast
+                Web Developer <br /> & Coffee Enthusiast
               </h1>
               <button
                 onClick={() => myRef.current.scrollIntoView()}
-                className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50"
+                className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50"
               >
                 Check out my projects
               </button>
               <Link href={"/aboutme"} scroll={false}>
-                <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+                <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50">
                   Who am I?
                 </button>
               </Link>
@@ -87,28 +85,31 @@ export default function Home() {
               style={{ fontSize: 44, lineHeight: 1.2 }}
               className="flex sm:hidden"
             >
-              Junior <br />
               Web Developer <br /> & Coffee <br />
               Enthusiast
             </h1>
             <h1 className="hidden text-5xl sm:flex md:text-6xl lg:text-7xl text-center">
-              Junior Web Developer <br /> & Coffee Enthusiast
+              Web Developer <br /> & Coffee Enthusiast
             </h1>
 
             <button
               onClick={() => myRef.current.scrollIntoView()}
-              className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50"
+              className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50"
             >
               Check out my projects
             </button>
 
             <Link href={"/aboutme"} scroll={false}>
-              <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-black hover:text-teal-50">
+              <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50">
                 Who am I?
               </button>
             </Link>
           </div>
         )}
+
+        {/* Tech */}
+
+        <Tech />
 
         {/*   <Presentation /> */}
 
@@ -116,114 +117,119 @@ export default function Home() {
           ref={myRef}
           id="projects"
           style={{ paddingTop: 96 }}
-          className="mx-auto max-w-7xl py-8 sm:py-10 px-4 sm:px-10 lg:px-4 lg:py-16 "
+          className="w-full  max-w-7xl py-8 sm:py-10 px-4 sm:px-10 lg:px-4 lg:py-16 "
         >
           <div className="mx-auto px-4 lg:max-w-none">
             <div className="max-w-3xl">
-              <p className="font-primary mt-2 text-3xl font-semi tracking-tight text-slate-50 sm:text-4xl  lg:text-5xl">
+              <p className="font-primary mt-2 text-3xl font-semi tracking-tight text-slate-50 sm:text-5xl lg:text-5xl">
                 Projects
               </p>
             </div>
 
-            <div className="mt-10 space-y-18 md:space-y-18 border-t border-gray-200 pt-12 sm:mt-16 sm:pt-16">
-              {features.map((feature) => (
-                <div
-                  id={feature.slug}
-                  key={feature.name}
-                  className="font-primary mb-28 sm:mb-36 flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
-                >
-                  <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
+            <div className="space-y-18 md:space-y-18 pt-10 sm:mt-8 sm:pt-16">
+              {features.map((feature, i) => (
+                <>
+                  <div
+                    id={feature.slug}
+                    key={feature.name}
+                    className="font-primary flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8 lg:mb-36"
+                  >
+                    <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
+                      <Link href={"/" + feature.slug}>
+                        <h3 className="text-xl font-medium text-gray-300 hidden lg:flex">
+                          {feature.name}
+                        </h3>
+                      </Link>
+                      <p className="text-white text-sm font">Type</p>
+                      <ul>
+                        <span
+                          style={{
+                            color: "white",
+                            backgroundColor:
+                              feature.type == "Hobby"
+                                ? "#B8918A"
+                                : feature.type == "LIA project"
+                                ? "#65877F"
+                                : feature.type == "Master thesis"
+                                ? "#A37067"
+                                : feature.type == "School project"
+                                ? "#59757D"
+                                : "black",
+                          }}
+                          className="mr-1 mt-2 inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900"
+                        >
+                          {feature.type}
+                        </span>
+                        ;
+                      </ul>
+
+                      <p className="text-white text-sm font mt-2">Stack/Tech</p>
+                      <ul>
+                        {feature.stack.map((st, i) => {
+                          return (
+                            <span
+                              key={i}
+                              className="mr-1 mt-2 inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900"
+                            >
+                              {st}
+                            </span>
+                          );
+                        })}
+                        ;
+                      </ul>
+                    </div>
+
+                    <div className="flex-auto lg:col-span-7 xl:col-span-8">
+                      <div className="relative aspect-w-5 aspect-h-3 overflow-hidden rounded-lg bg-black">
+                        <div className="gap-2 z-50 opacity-0 hover:opacity-100 flex justify-center items-center hover:bg-black/20 hover:duration-200 ">
+                          {!feature.repo ? null : (
+                            <Link target="_blank" href={feature.repo}>
+                              <button
+                                type="button"
+                                className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5  text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50"
+                              >
+                                Go to repo
+                              </button>
+                            </Link>
+                          )}
+                          {!feature.website ? null : (
+                            <Link target="_blank" href={feature.website}>
+                              <button
+                                type="button"
+                                className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5   text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50"
+                              >
+                                Go to website
+                              </button>
+                            </Link>
+                          )}
+                          <Link href={"/" + feature.slug}>
+                            <button
+                              type="button"
+                              className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5   text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50"
+                            >
+                              Details
+                            </button>
+                          </Link>
+                        </div>
+                        <img
+                          src={feature.imageSrc}
+                          alt={feature.imageAlt}
+                          className="object-contain object-top "
+                        />
+                      </div>
+                    </div>
                     <Link href={"/" + feature.slug}>
-                      <h3 className="text-xl font-medium text-gray-300 hidden lg:flex">
+                      <h3 className="text-xl mb-5 font-medium text-gray-300 flex lg:hidden">
                         {feature.name}
                       </h3>
                     </Link>
-                    <p className="text-white text-sm font mt-2">Type</p>
-                    <ul>
-                      <span
-                        style={{
-                          color: "white",
-                          backgroundColor:
-                            feature.type == "Hobby"
-                              ? "#B8918A"
-                              : feature.type == "LIA project"
-                              ? "#65877F"
-                              : feature.type == "Master thesis"
-                              ? "#A37067"
-                              : feature.type == "School project"
-                              ? "#59757D"
-                              : "black",
-                        }}
-                        className="mr-1 mt-2 inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900"
-                      >
-                        {feature.type}
-                      </span>
-                      ;
-                    </ul>
-
-                    <p className="text-white text-sm font mt-2">Stack/Tech</p>
-                    <ul>
-                      {feature.stack.map((st, i) => {
-                        return (
-                          <span
-                            key={i}
-                            className="mr-1 mt-2 inline-flex items-center rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900"
-                          >
-                            {st}
-                          </span>
-                        );
-                      })}
-                      ;
-                    </ul>
                   </div>
-
-                  <div className="flex-auto lg:col-span-7 xl:col-span-8">
-                    <div className="relative aspect-w-5 aspect-h-3 overflow-hidden rounded-lg bg-black">
-                      <div className="gap-2 z-50 opacity-0 hover:opacity-100 flex justify-center items-center hover:bg-black/20 hover:duration-200 ">
-                        {!feature.repo ? null : (
-                          <Link target="_blank" href={feature.repo}>
-                            <button
-                              type="button"
-                              className="rounded-md bg-white py-2.5 z-50 px-3.5 text-xs sm:text-sm font-semibold text-teal-900 shadow-sm hover:bg-black hover:text-teal-50"
-                            >
-                              Go to repo
-                            </button>
-                          </Link>
-                        )}
-                        {!feature.website ? null : (
-                          <Link target="_blank" href={feature.website}>
-                            <button
-                              type="button"
-                              className="rounded-md bg-white py-2.5 z-50 px-3.5 text-xs sm:text-sm  font-semibold text-teal-900 shadow-sm hover:bg-black hover:text-teal-50"
-                            >
-                              Go to website
-                            </button>
-                          </Link>
-                        )}
-                        <Link href={"/" + feature.slug}>
-                          <button
-                            type="button"
-                            className="rounded-md bg-white py-2.5 z-50 px-3.5 text-xs sm:text-sm font-semibold text-teal-900 shadow-sm hover:bg-black hover:text-teal-50"
-                          >
-                            Details
-                          </button>
-                        </Link>
-                      </div>
-                      <Image
-                        width={500}
-                        height={500}
-                        src={feature.imageSrc}
-                        alt={feature.imageAlt}
-                        className="object-fit object-top "
-                      />
+                  {!hej ? null : hej == i ? null : (
+                    <div className="flex w-full justify-center">
+                      <div className="w-1/2 h-[1px] rounded-lg bg-white/10 my-16 flex lg:hidden "></div>{" "}
                     </div>
-                  </div>
-                  <Link href={"/" + feature.slug}>
-                    <h3 className="text-xl mb-5 font-medium text-gray-300 flex lg:hidden">
-                      {feature.name}
-                    </h3>
-                  </Link>
-                </div>
+                  )}
+                </>
               ))}
             </div>
           </div>
