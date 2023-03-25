@@ -5,15 +5,12 @@ const Navigation = () => {
   return (
     <header
       style={{ zIndex: 100 }}
-      className="h-20 fixed left-0 right-0 text-gray-700 bg-black flex justify-between px-8 items-center sm:text-xl  md:text-2xl lg:text-4xl lg:h-24"
+      className="h-20 fixed left-0 right-0 text-gray-700 bg-black flex justify-between px-6  items-center sm:text-xl  md:text-2xl lg:text-4xl lg:h-24"
     >
-      <div>
-        {/*  <Link className="text-white text-sm font-normal" href={"/#projects"}>
-          Projects
+      <div style={{ width: 140 }}>
+        <Link href={"/"}>
+          <img src="/personalLogo.png"></img>
         </Link>
-        <Link className="text-white text-sm font-normal" href={"/aboutme"}>
-          Who am I?
-        </Link> */}
       </div>
       <div className="flex gap-3">
         <a href="mailto:angelica.moberg@hotmail.com">
