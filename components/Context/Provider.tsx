@@ -36,10 +36,10 @@ const HideProvider: FC<PropsWithChildren<Props>> = (props) => {
 
     let height = window.innerHeight + window.scrollY;
     setScrollHeight(height);
-    //console.log(scrollY);
+
     // Px from bottom
     let result = document.body.offsetHeight - scrollHeight;
-    //console.log(scrollHeight);
+
     if (window.scrollY > 60) {
       if (result < 100) {
         setHide(true);

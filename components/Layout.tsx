@@ -11,6 +11,7 @@ import Navigation from "./Navigation";
 import { hideContext } from "./Context/Provider";
 import Link from "next/link";
 import { Transition } from "@headlessui/react";
+import Footer from "./Footer";
 
 const Hej = () => {
   const { scrollHeight, scrollY } = useContext(hideContext);
@@ -64,6 +65,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       <Navigation />
       {children}
       <Hej />
+      <Footer />
     </div>
   );
 };
