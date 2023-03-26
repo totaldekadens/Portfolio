@@ -19,7 +19,7 @@ const Hej = () => {
   const [hide, setHide] = useState(true);
 
   useEffect(() => {
-    if (scrollY > 2 && scrollY < 6) {
+    if (scrollY > 1 && scrollY < 11) {
       setCurrentScrollHeight(scrollHeight);
     }
   }, [scrollY, scrollHeight, setCurrentScrollHeight]);

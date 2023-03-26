@@ -1,6 +1,5 @@
 import { IconHash } from "@tabler/icons";
 import PresText from "./PresText";
-import { HashtagIcon } from "@heroicons/react/20/solid";
 
 const PresentationDesktop = () => {
   return (
