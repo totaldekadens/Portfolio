@@ -51,6 +51,14 @@ export default function MobileDrawer({ open, setOpen }: Props) {
                           onClick={() => {
                             setOpen(false);
                           }}
+                          href="/#tech"
+                        >
+                          Tech / Tools
+                        </Link>
+                        <Link
+                          onClick={() => {
+                            setOpen(false);
+                          }}
                           href="/#projects"
                         >
                           Projects
