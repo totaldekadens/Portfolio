@@ -18,10 +18,10 @@ const Hej = () => {
   const [hide, setHide] = useState(true);
 
   useEffect(() => {
-    if (scrollY == 2) {
+    if (scrollY > 2 && scrollY < 6) {
       setCurrentScrollHeight(scrollHeight);
     }
-  }, [scrollY]);
+  }, [scrollY, scrollHeight, setCurrentScrollHeight]);
 
   useEffect(() => {
     if (currentScrollHeight > 0) {
@@ -32,7 +32,7 @@ const Hej = () => {
         setHide(true);
       }
     }
-  }, [scrollY, setHide]);
+  }, [scrollY, setHide, hide]);
 
   return (
     <Transition

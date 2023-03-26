@@ -4,13 +4,13 @@ import { Dispatch, SetStateAction } from "react";
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => {
-    const delay = 1 + i * 0.5;
+    const delay = 1 + i * 0.1;
     return {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { /* delay,  */ type: "spring", duration: 1.5, bounce: 0 },
-        opacity: { /* delay, */ duration: 0.05 },
+        pathLength: { delay, type: "spring", duration: 1, bounce: 0 },
+        opacity: { delay, duration: 0.03 },
       },
     };
   },
@@ -52,7 +52,7 @@ function Burger() {
         x2="20"
         y2="5"
         stroke="#ffffff"
-        custom={2}
+        custom={0}
         variants={draw}
       />
       {/* Mitten */}
@@ -62,7 +62,7 @@ function Burger() {
         x2="35"
         y2="22"
         stroke="#ffffff"
-        custom={2}
+        custom={0.1}
         variants={draw}
       />
 
@@ -73,7 +73,7 @@ function Burger() {
         x2="45"
         y2="40"
         stroke="#ffffff"
-        custom={2}
+        custom={0.2}
         variants={draw}
       />
     </motion.svg>
@@ -96,7 +96,7 @@ function Burger2() {
         x2="45"
         y2="40"
         stroke="#ffffff"
-        custom={2}
+        //custom={0}
         variants={draw}
       />
       <motion.line
@@ -105,7 +105,7 @@ function Burger2() {
         x2="5"
         y2="40"
         stroke="#ffffff"
-        custom={2}
+        custom={0.1}
         variants={draw}
       />
     </motion.svg>
