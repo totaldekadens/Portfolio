@@ -176,21 +176,21 @@ export default function Website() {
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               {!info ? null : info.website ? (
                 <a target="_blank" href={info.website}>
-                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50">
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
                     Go to Website
                   </button>
                 </a>
               ) : null}
               {!info ? null : info.repo ? (
                 <a target="_blank" href={info.repo}>
-                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50">
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
                     Go to Repository
                   </button>
                 </a>
               ) : null}
               {!info ? null : info.contribution ? (
                 <a target="_blank" href={info.contribution}>
-                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50">
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
                     Check my contribution
                   </button>
                 </a>

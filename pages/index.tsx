@@ -8,6 +8,7 @@ import { Fade } from "react-awesome-reveal";
 import { getCookie, setCookie } from "cookies-next";
 import Tech from "@/components/Tech";
 import MobileDrawer from "@/components/MobileDrawer";
+import { Key } from "tabler-icons-react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -65,12 +66,12 @@ export default function Home() {
               </h1>
               <button
                 onClick={() => myRef.current.scrollIntoView()}
-                className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50"
+                className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-sm sm:text-base font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50 hover:duration-200"
               >
                 Check out my projects
               </button>
               <Link href={"/aboutme"} scroll={false}>
-                <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50">
+                <button className="rounded-md mt-4 lg:mt-6  bg-black border border-white py-4 z-50 px-5 text-sm sm:text-base font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50 hover:duration-200">
                   Who am I?
                 </button>
               </Link>
@@ -94,13 +95,13 @@ export default function Home() {
 
             <button
               onClick={() => myRef.current.scrollIntoView()}
-              className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50"
+              className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50 hover:duration-200"
             >
               Check out my projects
             </button>
 
             <Link href={"/aboutme"} scroll={false}>
-              <button className="rounded-md mt-10 bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50">
+              <button className="rounded-md mt-4 lg:mt-6  bg-black border border-white py-4 z-50 px-5 text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#33b2b0b5] hover:text-teal-50 hover:duration-200">
                 Who am I?
               </button>
             </Link>
@@ -128,7 +129,7 @@ export default function Home() {
 
             <div className="space-y-18 md:space-y-18 pt-10 sm:mt-8 sm:pt-16">
               {features.map((feature, i) => (
-                <>
+                <div key={i}>
                   <div
                     id={feature.slug}
                     key={feature.name}
@@ -186,7 +187,7 @@ export default function Home() {
                             <Link target="_blank" href={feature.repo}>
                               <button
                                 type="button"
-                                className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5  text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50"
+                                className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5  text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200"
                               >
                                 Go to repo
                               </button>
@@ -196,7 +197,7 @@ export default function Home() {
                             <Link target="_blank" href={feature.website}>
                               <button
                                 type="button"
-                                className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5   text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50"
+                                className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5   text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200"
                               >
                                 Go to website
                               </button>
@@ -205,7 +206,7 @@ export default function Home() {
                           <Link href={"/" + feature.slug}>
                             <button
                               type="button"
-                              className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5   text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50"
+                              className="rounded-md bg-black border border-white py-2.5 z-50 px-3.5 sm:py-4 sm:px-5   text-xs sm:text-sm font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200"
                             >
                               Details
                             </button>
@@ -229,7 +230,7 @@ export default function Home() {
                       <div className="w-1/2 h-[1px] rounded-lg bg-white/10 my-16 flex lg:hidden "></div>{" "}
                     </div>
                   )}
-                </>
+                </div>
               ))}
             </div>
           </div>

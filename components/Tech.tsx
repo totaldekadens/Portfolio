@@ -108,7 +108,7 @@ export default function Tech() {
                             {tier.mainFeatures.map((mainFeature) => (
                               <li
                                 key={mainFeature}
-                                className="flex gap-x-3 py-2"
+                                className="flex gap-x-3 py-2 text-base"
                               >
                                 <CheckIcon
                                   className={classNames(

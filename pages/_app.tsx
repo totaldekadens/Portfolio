@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import Head from "next/head";
 import Script from "next/script";
 import Layout from "@/components/Layout";
+import HideProvider from "@/components/Context/Provider";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -27,9 +28,11 @@ function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <HideProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </HideProvider>
     </>
   );
 }
