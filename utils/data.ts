@@ -62,7 +62,7 @@ export const features: Website[] = [
   },
   {
     name: "MakeUpByS E-Commerce",
-    description: "Master Thesis",
+    description: "Master Thesis. Please go to repo for further info.",
     slug: getSlug("MakeUpByS E-Commerce"),
     imageSrc: "/make-desk-1.webp",
     imageAlt: "picture",
@@ -173,7 +173,8 @@ export const features: Website[] = [
   },
   {
     name: "FortKnox E-Commerce",
-    description: "Group project focused on checkout and admin",
+    description:
+      "Group project focused on checkout and admin. Please go to repo for further info.",
     slug: getSlug("FortKnox E-Commerce"),
     imageSrc: "/fort-desk-1.webp",
     imageAlt: "Black canvas body with chrome zipper and key ring.",
@@ -221,7 +222,8 @@ export const features: Website[] = [
   },
   {
     name: "SAD Active E-Commerce",
-    description: "Group project focused on creating a child theme",
+    description:
+      "Group project focused on creating a child theme in Wordpress. Please go to repo for further info.",
     slug: getSlug("SAD Active E-Commerce"),
     imageSrc: "/sad-desk-1.webp",
     imagesDesk: [
@@ -285,7 +287,7 @@ export const features: Website[] = [
   {
     name: "Zeon Milo E-Commerce",
     description:
-      "Group project focused on creating a complete backend and frontend",
+      "Group project focused on creating a complete full stack project. Please go to repo for further info.",
     slug: getSlug("Zeon Milo E-Commerce"),
     imageSrc: "/zeon-desk-1.webp",
     imageAlt: "Black canvas body with chrome zipper and key ring.",
@@ -327,7 +329,8 @@ export const features: Website[] = [
   },
   {
     name: "Puzzle",
-    description: "Own little puzzle project",
+    description:
+      "Own little puzzle project I made in the beginning of my education. ",
     slug: getSlug("Puzzle"),
     imageSrc: "/puzzle.webp",
     imageAlt: "Black canvas body with chrome zipper and key ring.",
