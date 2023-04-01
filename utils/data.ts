@@ -26,19 +26,43 @@ export interface Website {
 
 export const features: Website[] = [
   {
+    name: "Survey",
+    description:
+      "Recently started hobby project with only figma skisses atm. The idea is to give a company very easy tools to eg follow up a question at different departments each week.",
+    slug: getSlug("Survey"),
+    imageSrc: "/poll.png",
+    imageAlt: "picture",
+    imagesDesk: [
+      { src: "poll.png", alt: "wall-desk-3.webp" },
+      { src: "result.png", alt: "wall-desk-4.webp" },
+    ],
+    imagesMob: [{ src: "pollmobile.png", alt: "wall-desk-3.webp" }],
+    stack: ["Next.js", "Typescript", "Tailwind UI", "MongoDB"],
+    repo: "",
+    contribution: "",
+    website: "",
+    type: "Hobby",
+    collab: [],
+    focus: [],
+    date: "On going",
+  },
+  {
     name: "Boilerplate E-Commerce",
     description:
       "Ongoing group project for Wallmander & Co. The plan is to set up a fully functional sandbox e-commerce site with different integrations.",
     slug: getSlug("Boilerplate E-Commerce"),
-    imageSrc: "/wall-desk-1.webp",
+    imageSrc: "/wallnew1.png",
     imageAlt: "picture",
     imagesDesk: [
-      { src: "wall-desk-1.webp", alt: "wall-desk-1.webp" },
-      { src: "wall-desk-2.webp", alt: "wall-desk-2.webp" },
-      { src: "wall-desk-3.webp", alt: "wall-desk-3.webp" },
-      { src: "wall-desk-4.webp", alt: "wall-desk-4.webp" },
+      { src: "wallnew1.png", alt: "wall-desk-1.webp" },
+      { src: "wallnew2.png", alt: "wall-desk-2.webp" },
+      { src: "wallnew3.png", alt: "wall-desk-4.webp" },
     ],
-    imagesMob: [],
+    imagesMob: [
+      { src: "wallnewmob1.png", alt: "wall-desk-1.webp" },
+      { src: "wallnewmob2.png", alt: "wall-desk-2.webp" },
+      { src: "wallnewmob3.png", alt: "wall-desk-4.webp" },
+    ],
     stack: [
       "Next.js",
       "Typescript",
@@ -62,7 +86,8 @@ export const features: Website[] = [
   },
   {
     name: "MakeUpByS E-Commerce",
-    description: "Master Thesis. Please go to repo for further info.",
+    description:
+      "Master Thesis. Please go to repository for further info regarding the admin page and order handling.",
     slug: getSlug("MakeUpByS E-Commerce"),
     imageSrc: "/make-desk-1.webp",
     imageAlt: "picture",
