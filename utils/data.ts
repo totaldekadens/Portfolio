@@ -21,7 +21,7 @@ export interface Website {
   collab: string[];
   focus: string[];
   date: string;
-  imagesAdmin?: ImageSrc[];
+  imagesAdmin?: any[];
 }
 
 export const features: Website[] = [
@@ -80,20 +80,21 @@ export const features: Website[] = [
       "Integration BigCommerce",
       "Customization of Tailwind UI Components",
       "Filtering products",
-      "will be continued...",
+      "Adapting components to CMS",
+      "Will be continued...",
     ],
     date: "On going",
   },
   {
     name: "MakeUpByS E-Commerce",
     description:
-      "Master Thesis. Please go to repository for further info regarding the admin page and order handling.",
+      "Master Thesis. Please go to repository for further info regarding my work.",
     slug: getSlug("MakeUpByS E-Commerce"),
-    imageSrc: "/make-desk-1.webp",
+    imageSrc: "/make-desk-2.webp",
     imageAlt: "picture",
     imagesDesk: [
-      { src: "make-desk-1.webp", alt: "make-desk-1.webp" },
-      { src: "make-desk-2.webp", alt: "make-desk-2.webp" },
+      { src: "make-desk-2.webp", alt: "make-desk-1.webp" },
+      { src: "make-desk-1.webp", alt: "make-desk-2.webp" },
       { src: "make-desk-3.webp", alt: "make-desk-3.webp" },
       { src: "make-desk-4.webp", alt: "make-desk-4.webp" },
     ],
@@ -104,17 +105,92 @@ export const features: Website[] = [
       { src: "make-mob-4.webp", alt: "make-mob-4.webp" },
     ],
     imagesAdmin: [
-      { src: "admin-1.webp", alt: "admin-1.webp" },
-      { src: "admin-2.webp", alt: "admin-2.webp" },
-      { src: "admin-3.webp", alt: "admin-3.webp" },
-      { src: "admin-4.webp", alt: "admin-4.webp" },
-      { src: "admin-5.webp", alt: "admin-5.webp" },
-      { src: "admin-6.webp", alt: "admin-6.webp" },
-      { src: "admin-7.webp", alt: "admin-7.webp" },
-      { src: "admin-8.webp", alt: "admin-8.webp" },
-      { src: "admin-9.webp", alt: "admin-9.webp" },
-      { src: "admin-10.webp", alt: "admin-10.webp" },
-      { src: "admin-11.webp", alt: "admin-11.webp" },
+      {
+        title: "Overview Orders",
+        description: "",
+        subTitle: "",
+        images: [
+          { src: "admin-1.webp", alt: "admin-1.webp" },
+          { src: "admin-2.webp", alt: "admin-2.webp" },
+        ],
+      },
+      {
+        title: "Change order status",
+        subTitle: "Functionality",
+        descriptions: [
+          {
+            title: "Status description:",
+            list: [
+              {
+                item: "Färdigbehandlad (Completed)",
+                subItem:
+                  "Sets a date when the order has been sent and takes out the reserved qty of the products",
+              },
+              {
+                item: "Avbruten (Cancelled)",
+                subItem:
+                  "Moves the reserved quantities on the products back to the available balance again.",
+              },
+              {
+                item: "Pausad (Paused)",
+                subItem:
+                  "Puts the order aside. A customer maybe has reached out or maybe something with the payment went wrong.",
+              },
+              {
+                item: "Behandlas (Reserved/In process)",
+                subItem:
+                  "Qty of the products are moved to reserved qty from available qty and are ready to be shipped.",
+              },
+            ],
+          },
+          {
+            title: "Fixed limitations:",
+            list: [
+              {
+                item: 'You cannot change the status of orders that have the status "Färdigbehandlad" (Completed) or "Avbruten" (Cancelled).',
+              },
+              {
+                item: 'You cannot change an order with the status "Pausad" to "Färdigbehandlad". You will need to change it to "Behandlas" first and then to "Färdigbehandlad". This is because we want a proper process around how an order is being handled.',
+              },
+            ],
+          },
+        ],
+        images: [{ src: "admin-3.webp", alt: "admin-3.webp" }],
+      },
+      {
+        title: "Overview Products",
+        description: "",
+        subTitle: "",
+        images: [
+          { src: "admin-4.webp", alt: "admin-4.webp" },
+          { src: "admin-5.webp", alt: "admin-5.webp" },
+          { src: "admin-6.webp", alt: "admin-6.webp" },
+        ],
+      },
+      {
+        title: "Edit Product",
+        description: "",
+        subTitle: "",
+        images: [
+          { src: "admin-7.webp", alt: "admin-7.webp" },
+          { src: "admin-8.webp", alt: "admin-8.webp" },
+        ],
+      },
+      {
+        title: "Create Product",
+        description: "",
+        subTitle: "",
+        images: [
+          { src: "admin-9.webp", alt: "admin-9.webp" },
+          { src: "admin-10.webp", alt: "admin-10.webp" },
+        ],
+      },
+      {
+        title: "Courrier",
+        description: "",
+        subTitle: "",
+        images: [{ src: "admin-11.webp", alt: "admin-11.webp" }],
+      },
     ],
     stack: ["Next.js", "Typescript", "Mantine UI", "MongoDB", "Stripe.js"],
     repo: "https://github.com/totaldekadens/MakeupByS",

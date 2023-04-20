@@ -30,6 +30,7 @@ export default function Website() {
     }
   }, [list]);
   const router = useRouter();
+
   return (
     <>
       <Head>
@@ -164,6 +165,86 @@ export default function Website() {
             </div>
           ) : null}
 
+          {info && info.imagesAdmin && info.imagesAdmin.length > 0 ? (
+            <div className="bg-black mx-auto max-w-2xl px-4 pt-10 sm:pt-auto  sm:px-6 lg:max-w-7xl lg:gap-x-8 lg:px-8 lg:pb-24">
+              <div className="sm:pb-10 pt-0 lg:mx-auto lg:max-w-7xl lg:px-8">
+                <div className="max-w-3xl">
+                  <p className="font-primary text-3xl font-semi tracking-tight text-slate-50 sm:text-5xl lg:text-5xl">
+                    Admin panel
+                  </p>
+                </div>
+                <div className="space-y-18 md:space-y-18 pt-10 ">
+                  {info.imagesAdmin.map((item, i) => {
+                    return (
+                      <div key={i} className="pb-10">
+                        <h3 className="text-2xl tracking-tight text-white  sm:text-3xl pb-4">
+                          {item.title}
+                        </h3>
+                        <div className="relative -mb-6 w-full pb-6">
+                          <ul
+                            role="list"
+                            className=" h-full sm:mx-6 grid grid-cols-1 gap-8 lg:space-x-0"
+                          >
+                            {item.images.map((image: any, i: number) => (
+                              <li
+                                key={i}
+                                className="h-full flex-col text-center lg:w-auto"
+                              >
+                                <div className="group relative w-full flex justify-center">
+                                  <div
+                                    style={{ width: 800 }}
+                                    className="aspect-h-1 w-full overflow-hidden rounded-md bg-black sm:w-[800px] "
+                                  >
+                                    <img
+                                      src={image.src}
+                                      alt={image.alt}
+                                      className="w-full h-full object-contain object-top"
+                                    />
+                                  </div>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="pt-8 ">
+                            <h4 className="text-white font-semibold pb-2 ">
+                              {item.subTitle ? item.subTitle : null}
+                            </h4>
+                            {!item.descriptions
+                              ? null
+                              : item.descriptions.map(
+                                  (desc: any, i: number) => (
+                                    <div key={i} className="pb-6">
+                                      <p className="text-white underline pb-1">
+                                        {" "}
+                                        {desc.title}
+                                      </p>
+                                      {desc.list.map((hej: any, i: number) => (
+                                        <div key={i} className="pl-4 pb-4">
+                                          <p className="text-white ">
+                                            {hej.item}
+                                          </p>
+                                          <p className="text-white pl-4 opacity-70">
+                                            {hej.subItem}
+                                          </p>
+                                        </div>
+                                      ))}
+                                      <p className="text-white">
+                                        {desc.subItem}
+                                      </p>
+                                    </div>
+                                  )
+                                )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : null}
+
           {/* Info */}
           <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -233,28 +314,33 @@ export default function Website() {
                     </ul>
                   </div>
                 </div>
-
-                <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
-                  <h3 className="text-md font-bold text-gray-300">My focus</h3>
-                  <div className="mt-4">
-                    <ul
-                      role="list"
-                      className="list-disc space-y-2 pl-4 text-sm"
-                    >
-                      {!info
-                        ? null
-                        : info.focus.map((highlight) => (
-                            <li
-                              key={highlight}
-                              className="text-gray-300 flex gap-1"
-                            >
-                              <HashtagIcon width={12} />
-                              <span className="text-gray-300">{highlight}</span>
-                            </li>
-                          ))}
-                    </ul>
+                {info && info.focus.length > 0 ? (
+                  <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
+                    <h3 className="text-md font-bold text-gray-300">
+                      My focus
+                    </h3>
+                    <div className="mt-4">
+                      <ul
+                        role="list"
+                        className="list-disc space-y-2 pl-4 text-sm"
+                      >
+                        {!info
+                          ? null
+                          : info.focus.map((highlight) => (
+                              <li
+                                key={highlight}
+                                className="text-gray-300 flex gap-1"
+                              >
+                                <HashtagIcon width={12} />
+                                <span className="text-gray-300">
+                                  {highlight}
+                                </span>
+                              </li>
+                            ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
             </div>
           </div>
