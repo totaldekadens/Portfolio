@@ -318,6 +318,8 @@ export default function Website() {
                                         <video
                                           autoPlay
                                           loop
+                                          muted
+                                          // controls
                                           style={{
                                             width: "800px",
                                           }}
