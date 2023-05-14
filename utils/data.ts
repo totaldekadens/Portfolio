@@ -22,7 +22,7 @@ export interface Website {
   focus: string[];
   date: string;
   imagesAdmin?: any[];
-  imagesWP?: any[];
+  imagesWP: any[];
 }
 
 export const features: Website[] = [
@@ -45,6 +45,7 @@ export const features: Website[] = [
     type: "Hobby",
     collab: [],
     focus: [],
+    imagesWP: [],
     date: "On going",
   },
   {
@@ -144,6 +145,7 @@ export const features: Website[] = [
       { src: "fraktmob.png", alt: "make-desk-4.webp" },
       { src: "sokmob.png", alt: "make-desk-4.webp" },
     ],
+    imagesWP: [],
     imagesAdmin: [
       {
         title: "Overview Orders",
@@ -274,6 +276,7 @@ export const features: Website[] = [
     collab: ["Wictoria Drefeldt", "Hannane Kabuli", "Ali Bami", "Ting Wang"],
     focus: ["Design", "Member page", "Member list page"],
     date: "2022-12-22",
+    imagesWP: [],
   },
 
   {
@@ -305,6 +308,7 @@ export const features: Website[] = [
       "Different components on price and home page",
     ],
     date: "2022-10-31",
+    imagesWP: [],
   },
   {
     name: "FortKnox E-Commerce",
@@ -354,6 +358,7 @@ export const features: Website[] = [
       "Order confirmation",
     ],
     date: "2022-06-13",
+    imagesWP: [],
   },
   {
     name: "SAD Active E-Commerce",
@@ -418,6 +423,7 @@ export const features: Website[] = [
       "Search function",
     ],
     date: "2022-05-02",
+    imagesWP: [],
   },
   {
     name: "Zeon Milo E-Commerce",
@@ -461,6 +467,7 @@ export const features: Website[] = [
     ],
     focus: ["Database", "API", "Category page", "Checkout", "Cart", "Admin"],
     date: "2022-03-03",
+    imagesWP: [],
   },
   {
     name: "Puzzle",
@@ -479,5 +486,6 @@ export const features: Website[] = [
     collab: [],
     focus: ["Practice functions"],
     date: "2022-01-09",
+    imagesWP: [],
   },
 ];

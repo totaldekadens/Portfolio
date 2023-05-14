@@ -165,6 +165,118 @@ export default function Website() {
             </div>
           ) : null}
 
+          {/* Info */}
+          <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-10">
+            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+              <h1 className="font-primary text-3xl font-semi tracking-tight text-slate-50 sm:text-5xl lg:text-5xl">
+                {" "}
+                {/* //text-2xl font-bold tracking-tight text-gray-300 sm:text-3xl" */}
+                {info ? info.name : null}
+              </h1>
+              <div className="pt-6">
+                <h3 className="sr-only">Description</h3>
+
+                <div className="space-y-6">
+                  <p className="text-base text-gray-500">
+                    {!info ? null : info.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Options */}
+            <div className="mt-4 lg:row-span-3 lg:mt-0">
+              {!info ? null : info.website ? (
+                <a target="_blank" href={info.website}>
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
+                    Go to Website
+                  </button>
+                </a>
+              ) : null}
+              {!info ? null : info.repo ? (
+                <a target="_blank" href={info.repo}>
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
+                    Go to Repository
+                  </button>
+                </a>
+              ) : null}
+              {!info ? null : info.contribution ? (
+                <a target="_blank" href={info.contribution}>
+                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
+                    Check my contribution
+                  </button>
+                </a>
+              ) : null}
+            </div>
+
+            <div
+              className={` lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8`}
+            >
+              {/* Description and details */}
+              {/*   <div>
+                <h3 className="sr-only">Description</h3>
+
+                <div className="space-y-6">
+                  <p className="text-base text-gray-500">
+                    {!info ? null : info.description}
+                  </p>
+                </div>
+              </div> */}
+
+              <div className="mt-10 flex flex-wrap justify-start">
+                <div className="w-full sm:w-auto">
+                  <h3 className="text-md font-bold text-gray-300">
+                    Stack / Tech
+                  </h3>
+                  <div className="mt-4">
+                    <ul
+                      role="list"
+                      className="list-disc space-y-2 pl-4 text-sm"
+                    >
+                      {!info
+                        ? null
+                        : info.stack.map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="text-gray-300 flex gap-1"
+                            >
+                              <HashtagIcon width={12} />
+                              <span className="text-gray-300">{highlight}</span>
+                            </li>
+                          ))}
+                    </ul>
+                  </div>
+                </div>
+                {info && info.focus.length > 0 ? (
+                  <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
+                    <h3 className="text-md font-bold text-gray-300">
+                      My focus
+                    </h3>
+                    <div className="mt-4">
+                      <ul
+                        role="list"
+                        className="list-disc space-y-2 pl-4 text-sm"
+                      >
+                        {!info
+                          ? null
+                          : info.focus.map((highlight) => (
+                              <li
+                                key={highlight}
+                                className="text-gray-300 flex gap-1"
+                              >
+                                <HashtagIcon width={12} />
+                                <span className="text-gray-300">
+                                  {highlight}
+                                </span>
+                              </li>
+                            ))}
+                      </ul>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          </div>
           {info && info.imagesAdmin && info.imagesAdmin.length > 0 ? (
             <div className="bg-black mx-auto max-w-2xl px-4 pt-10 sm:pt-auto  sm:px-6 lg:max-w-7xl lg:gap-x-8 lg:px-8 lg:pb-24">
               <div className="sm:pb-10 pt-0 lg:mx-auto lg:max-w-7xl lg:px-8">
@@ -246,7 +358,7 @@ export default function Website() {
           ) : null}
 
           {info && info.imagesWP && info.imagesWP.length > 0 ? (
-            <div className="bg-black mx-auto max-w-2xl px-4 pt-10 sm:pt-auto  sm:px-6 lg:max-w-7xl lg:gap-x-8 lg:px-8 lg:pb-24">
+            <div className="bg-black mx-auto max-w-2xl px-6 sm:pt-10 sm:pt-auto lg:max-w-7xl lg:gap-x-8  lg:pb-24">
               <div className="sm:pb-10 pt-0 lg:mx-auto lg:max-w-7xl lg:px-8">
                 <div className="max-w-3xl">
                   <p className="font-primary text-3xl font-semi tracking-tight text-slate-50 sm:text-5xl lg:text-5xl">
@@ -285,7 +397,7 @@ export default function Website() {
                                   justifyContent: "center",
                                   width: "100%",
                                 }}
-                                className="w-full h-[600px]"
+                                className="w-full h-[500px] lg:h-[600px]"
                               >
                                 <Carousel slide={false} indicators={false}>
                                   {item.images && item.images.length > 0
@@ -339,106 +451,6 @@ export default function Website() {
               </div>
             </div>
           ) : null}
-
-          {/* Info */}
-          <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24">
-            <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-300 sm:text-3xl">
-                {info ? info.name : null}
-              </h1>
-            </div>
-
-            {/* Options */}
-            <div className="mt-4 lg:row-span-3 lg:mt-0">
-              {!info ? null : info.website ? (
-                <a target="_blank" href={info.website}>
-                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
-                    Go to Website
-                  </button>
-                </a>
-              ) : null}
-              {!info ? null : info.repo ? (
-                <a target="_blank" href={info.repo}>
-                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
-                    Go to Repository
-                  </button>
-                </a>
-              ) : null}
-              {!info ? null : info.contribution ? (
-                <a target="_blank" href={info.contribution}>
-                  <button className="mt-10 flex w-full justify-center rounded-md bg-black border border-white py-4 z-50 px-5 font-semi text-white shadow-sm hover:bg-[#2b9593] hover:text-teal-50 hover:duration-200">
-                    Check my contribution
-                  </button>
-                </a>
-              ) : null}
-            </div>
-
-            <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
-              {/* Description and details */}
-              <div>
-                <h3 className="sr-only">Description</h3>
-
-                <div className="space-y-6">
-                  <p className="text-base text-gray-500">
-                    {!info ? null : info.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-10 flex flex-wrap justify-start">
-                <div className="w-full sm:w-auto">
-                  <h3 className="text-md font-bold text-gray-300">
-                    Stack / Tech
-                  </h3>
-                  <div className="mt-4">
-                    <ul
-                      role="list"
-                      className="list-disc space-y-2 pl-4 text-sm"
-                    >
-                      {!info
-                        ? null
-                        : info.stack.map((highlight) => (
-                            <li
-                              key={highlight}
-                              className="text-gray-300 flex gap-1"
-                            >
-                              <HashtagIcon width={12} />
-                              <span className="text-gray-300">{highlight}</span>
-                            </li>
-                          ))}
-                    </ul>
-                  </div>
-                </div>
-                {info && info.focus.length > 0 ? (
-                  <div className="w-full sm:w-auto mt-10 sm:ml-20 sm:mt-0">
-                    <h3 className="text-md font-bold text-gray-300">
-                      My focus
-                    </h3>
-                    <div className="mt-4">
-                      <ul
-                        role="list"
-                        className="list-disc space-y-2 pl-4 text-sm"
-                      >
-                        {!info
-                          ? null
-                          : info.focus.map((highlight) => (
-                              <li
-                                key={highlight}
-                                className="text-gray-300 flex gap-1"
-                              >
-                                <HashtagIcon width={12} />
-                                <span className="text-gray-300">
-                                  {highlight}
-                                </span>
-                              </li>
-                            ))}
-                      </ul>
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </>
