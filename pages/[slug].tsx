@@ -319,7 +319,7 @@ export default function Website() {
                                           autoPlay
                                           loop
                                           muted
-                                          // controls
+                                          controls
                                           style={{
                                             width: "800px",
                                           }}
