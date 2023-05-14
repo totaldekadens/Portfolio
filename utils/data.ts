@@ -22,6 +22,7 @@ export interface Website {
   focus: string[];
   date: string;
   imagesAdmin?: any[];
+  imagesWP?: any[];
 }
 
 export const features: Website[] = [
@@ -49,7 +50,7 @@ export const features: Website[] = [
   {
     name: "Boilerplate E-Commerce",
     description:
-      "Ongoing group project for Wallmander & Co. The plan is to set up a fully functional sandbox e-commerce site with different integrations.",
+      "Project for Wallmander & Co. The plan is to set up a fully functional sandbox e-commerce site with different integrations.",
     slug: getSlug("Boilerplate E-Commerce"),
     imageSrc: "/wallnew1.png",
     imageAlt: "picture",
@@ -62,6 +63,29 @@ export const features: Website[] = [
       { src: "wallnewmob1.png", alt: "wall-desk-1.webp" },
       { src: "wallnewmob2.png", alt: "wall-desk-2.webp" },
       { src: "wallnewmob3.png", alt: "wall-desk-4.webp" },
+      { src: "wall4.png", alt: "wall-desk-4.webp" },
+    ],
+    imagesWP: [
+      {
+        title: "Custom product card",
+        description: "",
+        subTitle: "",
+        images: [],
+        videos: [{ src: "movie.mov", alt: "movie" }],
+        video: true,
+      },
+      {
+        title: "Creation of dynamic components interacting with CMS",
+        description:
+          "Here´s some examples from the coooperation between me (creating the components in Next.js) and their developer creating the conditions in wordpress. The blocks are created based on their designer's wireframe",
+        subTitle: "",
+        images: [
+          { src: "components2.png", alt: "admin-1.webp" },
+          { src: "components3.png", alt: "admin-2.webp" },
+          { src: "components4.png", alt: "admin-3.webp" },
+        ],
+        video: false,
+      },
     ],
     stack: [
       "Next.js",
@@ -79,9 +103,11 @@ export const features: Website[] = [
     focus: [
       "Integration BigCommerce",
       "Customization of Tailwind UI Components",
+      "Category page",
       "Filtering products",
+      "Product page",
+      "Startpage",
       "Adapting components to CMS",
-      "Will be continued...",
     ],
     date: "On going",
   },
@@ -97,12 +123,26 @@ export const features: Website[] = [
       { src: "make-desk-1.webp", alt: "make-desk-2.webp" },
       { src: "make-desk-3.webp", alt: "make-desk-3.webp" },
       { src: "make-desk-4.webp", alt: "make-desk-4.webp" },
+      { src: "varukorg.png", alt: "make-desk-4.webp" },
+      { src: "kassa1.png", alt: "make-desk-4.webp" },
+      { src: "kundexist.png", alt: "make-desk-4.webp" },
+      { src: "kundnotexist.png", alt: "make-desk-4.webp" },
+      { src: "annanleverans.png", alt: "make-desk-4.webp" },
+      { src: "frakt.png", alt: "make-desk-4.webp" },
+      { src: "sok.png", alt: "make-desk-4.webp" },
     ],
     imagesMob: [
       { src: "make-mob-1.webp", alt: "make-mob-1.webp" },
       { src: "make-mob-2.webp", alt: "make-mob-2.webp" },
       { src: "make-mob-3.webp", alt: "make-mob-3.webp" },
       { src: "make-mob-4.webp", alt: "make-mob-4.webp" },
+      { src: "varukorgmob.png", alt: "make-desk-4.webp" },
+      { src: "kassamob.png", alt: "make-desk-4.webp" },
+      { src: "kundexistmob.png", alt: "make-desk-4.webp" },
+      { src: "kundnotexistmobe.png", alt: "make-desk-4.webp" },
+      { src: "annanleveransmob.png", alt: "make-desk-4.webp" },
+      { src: "fraktmob.png", alt: "make-desk-4.webp" },
+      { src: "sokmob.png", alt: "make-desk-4.webp" },
     ],
     imagesAdmin: [
       {
@@ -185,18 +225,12 @@ export const features: Website[] = [
           { src: "admin-10.webp", alt: "admin-10.webp" },
         ],
       },
-      {
-        title: "Courrier",
-        description: "",
-        subTitle: "",
-        images: [{ src: "admin-11.webp", alt: "admin-11.webp" }],
-      },
     ],
     stack: ["Next.js", "Typescript", "Mantine UI", "MongoDB", "Stripe.js"],
     repo: "https://github.com/totaldekadens/MakeupByS",
     contribution:
       "https://github.com/totaldekadens/MakeupByS/graphs/contributors",
-    website: "https://makeupbys.se/",
+    website: "",
     type: "Master thesis",
     collab: ["Jacob Hoggen"],
     focus: [

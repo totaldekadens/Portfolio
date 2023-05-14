@@ -137,7 +137,7 @@ export default function Website() {
                   <div className="relative -mb-6 w-full overflow-x-auto pb-6">
                     <ul
                       role="list"
-                      className="mx-4 inline-flex h-full space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
+                      className="mx-4 inline-flex h-full space-x-8 sm:mx-6" // lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0"
                     >
                       {info.imagesMob.map((image, i) => (
                         <li
@@ -236,6 +236,99 @@ export default function Website() {
                                   )
                                 )}
                           </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+          {info && info.imagesWP && info.imagesWP.length > 0 ? (
+            <div className="bg-black mx-auto max-w-2xl px-4 pt-10 sm:pt-auto  sm:px-6 lg:max-w-7xl lg:gap-x-8 lg:px-8 lg:pb-24">
+              <div className="sm:pb-10 pt-0 lg:mx-auto lg:max-w-7xl lg:px-8">
+                <div className="max-w-3xl">
+                  <p className="font-primary text-3xl font-semi tracking-tight text-slate-50 sm:text-5xl lg:text-5xl">
+                    Extras
+                  </p>
+                </div>
+                <div className="space-y-18 md:space-y-18 pt-10 ">
+                  {info.imagesWP.map((item, i) => {
+                    return (
+                      <div key={i} className="pb-10">
+                        <h3 className="text-2xl tracking-tight text-white  sm:text-3xl pb-4">
+                          {item.title}
+                        </h3>
+                        <div className="pt-8 ">
+                          {/*  <h4 className="text-white font-semibold pb-2 ">
+                            {item.subTitle ? item.subTitle : null}
+                          </h4> */}
+                          {!item.description ? null : (
+                            <div key={i} className="pb-6">
+                              <p className="text-white pb-1">
+                                {" "}
+                                {item.description}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative -mb-6 w-full pb-6">
+                          <ul
+                            role="list"
+                            className=" h-full sm:mx-6 grid grid-cols-1 gap-8 lg:space-x-0"
+                          >
+                            {item.images.length < 1 ? null : (
+                              <div
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  width: "100%",
+                                }}
+                                className="w-full h-[600px]"
+                              >
+                                <Carousel slide={false} indicators={false}>
+                                  {item.images && item.images.length > 0
+                                    ? item.images.map(
+                                        (image: any, i: number) => (
+                                          <img
+                                            className="object-contain object-top h-full"
+                                            key={i}
+                                            alt={image.alt}
+                                            src={image.src}
+                                          />
+                                        )
+                                      )
+                                    : null}
+                                </Carousel>
+                              </div>
+                            )}
+                            {!item.videos
+                              ? null
+                              : item.videos.map((video: any, i: number) => (
+                                  <li
+                                    key={i}
+                                    className="h-full flex-col w-auto items-center justify-start"
+                                  >
+                                    <div className="group relative w-full flex justify-center">
+                                      <div
+                                        //style={{ width: 800 }}
+                                        className="aspect-h-1 w-full overflow-hidden rounded-md bg-black flex justify-center "
+                                      >
+                                        <video
+                                          autoPlay
+                                          loop
+                                          style={{
+                                            width: "800px",
+                                          }}
+                                        >
+                                          <source src={video.src} />
+                                        </video>
+                                      </div>
+                                    </div>
+                                  </li>
+                                ))}
+                          </ul>
                         </div>
                       </div>
                     );
