@@ -38,7 +38,7 @@ const PresentationDesktop = () => {
                 answer="Web development with focus on E-commerce (the name is now changed to Full Stack Developer)"
               />
               <PresText question="School?" answer="Medieinstitutet Göteborg" />
-              <PresText question="Graduation?" answer="17th of May 2023" />
+              {/*     <PresText question="Graduation?" answer="17th of May 2023" /> */}
               <PresText
                 question="My nisch?"
                 answer="This one is so hard, because I’m right between frontend and backend at the moment. I know I like to work with functionality and problem solving, so I’ve been drawn to eg admin pages within projects in school and been the one ending up with creating the API’s. I think it has something to do with my need of feeling in control, if we are going to be honest."

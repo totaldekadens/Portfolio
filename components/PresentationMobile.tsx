@@ -47,7 +47,7 @@ const PresentationMobile = () => {
                 answer="Web development with focus on E-commerce (the name is now changed to Full Stack Developer)"
               />
               <PresText question="School?" answer="Medieinstitutet Göteborg" />
-              <PresText question="Graduation?" answer="17th of May 2023" />
+              {/*  <PresText question="Graduation?" answer="17th of May 2023" /> */}
             </div>
             <div className="flex flex-col basis-1/2 px-3">
               <PresText
