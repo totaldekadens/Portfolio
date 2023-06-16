@@ -20,17 +20,17 @@ npm run dev
 
 ### Desktop 
 
-![Skärmavbild 2023-06-16 kl  15 46 45](https://github.com/totaldekadens/Portfolio/assets/90898648/3f6e30a8-c535-42c0-a161-5340694d9a75)
-![Skärmavbild 2023-06-16 kl  15 47 01](https://github.com/totaldekadens/Portfolio/assets/90898648/808cf0eb-fee5-427e-a847-c8d11336453c)
-![Skärmavbild 2023-06-16 kl  15 47 11](https://github.com/totaldekadens/Portfolio/assets/90898648/d515d6e0-adf6-4df2-908f-42a0e1082eed)
-![Skärmavbild 2023-06-16 kl  15 47 45](https://github.com/totaldekadens/Portfolio/assets/90898648/094521c4-4e9a-4f39-9591-8e5a7fc77484)
-![Skärmavbild 2023-06-16 kl  15 48 37](https://github.com/totaldekadens/Portfolio/assets/90898648/33013d0d-1bf4-4a6b-a484-c52300ac0c48)
+![Skärmavbild 2023-06-16 kl  15 46 45](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/e738f972-1b01-431f-8d5e-2ad96435963c)
+![Skärmavbild 2023-06-16 kl  15 47 01](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/de273047-78c6-4889-8e0b-abaf72760346)
+![Skärmavbild 2023-06-16 kl  15 47 11](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/cc8dc69a-66d5-4b73-9001-c7cd64202957)
+![Skärmavbild 2023-06-16 kl  15 47 45](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/16ebc370-ffc0-4c86-aae1-7384d375e599)
+![Skärmavbild 2023-06-16 kl  15 48 37](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/02411ca7-a3f4-48dc-9850-fba84c4708bb)
 
 
 ### Mobile device
 
-![Skärmavbild 2023-06-16 kl  15 49 05](https://github.com/totaldekadens/Portfolio/assets/90898648/8c947295-f0ed-4c9d-90b7-44ac1ce957e0)
-![Skärmavbild 2023-06-16 kl  15 49 20](https://github.com/totaldekadens/Portfolio/assets/90898648/52e15900-25f7-4dfa-966f-244dcc2a1845)
-![Skärmavbild 2023-06-16 kl  15 49 35](https://github.com/totaldekadens/Portfolio/assets/90898648/189b1bd4-aadf-49a8-b948-61e98f109cc7)
-![Skärmavbild 2023-06-16 kl  15 50 06](https://github.com/totaldekadens/Portfolio/assets/90898648/bdf2871a-35ec-4af5-8b4d-a91728574cca)
-![Skärmavbild 2023-06-16 kl  15 49 46](https://github.com/totaldekadens/Portfolio/assets/90898648/34989671-462c-49e0-972b-6b7af2eb582e)
+![Skärmavbild 2023-06-16 kl  15 49 05](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/f25bafbd-8c39-4cbb-8042-3174a5a1dd71)
+![Skärmavbild 2023-06-16 kl  15 49 20](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/3800b1fd-3c62-445b-b8f4-e25a242df0a9)
+![Skärmavbild 2023-06-16 kl  15 49 35](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/15538142-04e1-4017-9ea9-bee58e09f737)
+![Skärmavbild 2023-06-16 kl  15 50 06](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/d8f0dcc9-f440-4382-97ea-f066d9d6ea39)
+![Skärmavbild 2023-06-16 kl  15 49 46](https://github.com/totaldekadens/Portfolio-old-1/assets/90898648/28a45de4-52d4-4c66-87fa-d17daada2ef8)
